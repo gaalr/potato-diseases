@@ -1,6 +1,9 @@
-document.querySelectorAll('.accordion-header').forEach((button) => {
-	button.addEventListener('click', () => {
-		const accordionItem = button.parentElement;
-		accordionItem.classList.toggle('open');
+'use strict';
+
+const acc = document.getElementsByClassName('accordion');
+
+for (let i = 0; i < acc.length; i++) {
+	acc[i].addEventListener('click', function () {
+		this.classList.toggle('active');
 	});
-});
+}
