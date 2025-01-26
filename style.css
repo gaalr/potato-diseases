@@ -9,7 +9,7 @@
 body {
 	font-family: 'Orbitron', sans-serif;
 	min-height: 100vh;
-	max-width: 1800px;
+	max-width: 2000px;
 	margin: 0 auto;
 	padding: 1rem;
 	background-color: aquamarine;
@@ -32,6 +32,7 @@ h2 {
 	background-color: #333;
 	padding: 10px 20px;
 	margin-bottom: 1rem;
+	letter-spacing: 2px;
 }
 
 /* Lista stílusok */
@@ -102,7 +103,7 @@ h2 {
 }
 
 #fungal-diseases {
-	background-color: bisque;
+	background-color: whitesmoke;
 	padding: 1rem;
 	margin-top: 1rem;
 	border: 1px solid #333;
@@ -110,8 +111,9 @@ h2 {
 }
 
 #bacterial-diseases {
-	background-color: #f0f0f0;
+	background-color: whitesmoke;
 	padding: 1rem;
 	margin-top: 1rem;
 	border: 1px solid #333;
+	text-align: center;
 }
