@@ -1,0 +1,95 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Orbitron', sans-serif;
+	min-height: 100vh;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 1rem;
+	background-color: aquamarine;
+}
+
+.title {
+	text-align: center;
+	color: #333;
+	padding: 1rem;
+}
+
+/* Navbar */
+.navbar {
+	background-color: #333;
+	padding: 1rem;
+	position: fixed;
+	margin: auto;
+	width: 100%;
+	z-index: 1000;
+	border-radius: 5px;
+}
+.navbar-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	list-style-type: none;
+	padding: 1rem;
+}
+.navbar-list li {
+	margin-right: 1rem;
+}
+.navbar-list a {
+	color: white;
+	text-decoration: none;
+}
+.navbar-list a:hover {
+	color: chocolate;
+}
+
+/* Main Content */
+.diseases {
+	font-family: sans-serif;
+	margin-top: 70px; /* Space for the navbar */
+}
+
+/* Fungal diseases */
+#fungal-diseases {
+	background-color: bisque;
+	padding: 1rem;
+	margin-top: 1rem;
+	border: 1px solid #333;
+	border-radius: 5px;
+}
+#fungal-diseases h2 {
+	color: #333;
+	margin-bottom: 1rem;
+}
+
+/* Bacterial diseases */
+#bacterial-diseases {
+	background-color: #f0f0f0;
+	padding: 1rem;
+	margin-top: 1rem;
+	border: 1px solid #333;
+	border-radius: 5px;
+}
+#bacterial-diseases h2 {
+	color: #333;
+	margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+	.navbar-list {
+		flex-direction: column;
+	}
+	.navbar-list li {
+		margin-right: 0;
+		margin-bottom: 1rem;
+	}
+	.diseases {
+		padding: 0.5rem;
+	}
+}
