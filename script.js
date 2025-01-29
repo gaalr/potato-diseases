@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	// Kattintásra történő szekcióváltás
 	const navLinks = document.querySelectorAll('.nav-link');
+	const mainContent = document.querySelector('.main-content'); // A középső tartalom
 	navLinks.forEach((link) => {
 		link.addEventListener('click', function (event) {
 			event.preventDefault(); // Megakadályozza az oldal újratöltését
@@ -20,57 +21,60 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (targetElement) {
 				targetElement.classList.add('active');
 			}
+
+			// A fő üdvözlő tartalom eltüntetése
+			if (mainContent) {
+				mainContent.style.display = 'none';
+			}
 		});
 	});
+});
 
-	// Képváltás funkció minden szekcióra
-	const diseaseSections = document.querySelectorAll('.disease');
-	diseaseSections.forEach((section) => {
-		const images = section.querySelectorAll('.image-item');
-		let currentImageIndex = 0;
+// Képváltás funkció minden szekcióra
+const diseaseSections = document.querySelectorAll('.disease');
+diseaseSections.forEach((section) => {
+	const images = section.querySelectorAll('.image-item');
+	let currentImageIndex = 0;
 
-		// Ha van kép, az első képet megjelenítjük
-		if (images.length > 0) {
-			images[currentImageIndex].classList.add('active');
-		}
+	// Ha van kép, az első képet megjelenítjük
+	if (images.length > 0) {
+		images[currentImageIndex].classList.add('active');
+	}
 
-		// Képváltás
-		function showImage(index) {
-			console.log('Jelenleg az alábbi indexű kép van kiválasztva: ', index);
+	// Képváltás
+	function showImage(index) {
+		// Elrejtjük az összes képet
+		images.forEach((img, i) => {
+			img.classList.remove('active');
+		});
 
-			// Elrejtjük az összes képet
-			images.forEach((img, i) => {
-				img.classList.remove('active');
-			});
+		// Az aktuális képet megjelenítjük
+		images[index].classList.add('active');
 
-			// Az aktuális képet megjelenítjük
-			images[index].classList.add('active');
-
-			// Frissítjük a gombok állapotát
-			const prevButton = section.querySelector('.prev');
-			const nextButton = section.querySelector('.next');
-			prevButton.disabled = index === 0;
-			nextButton.disabled = index === images.length - 1;
-		}
-
-		// Gombok eseménykezelői
+		// Frissítjük a gombok állapotát
 		const prevButton = section.querySelector('.prev');
 		const nextButton = section.querySelector('.next');
+		prevButton.disabled = index === 0;
+		nextButton.disabled = index === images.length - 1;
+	}
 
-		if (prevButton && nextButton) {
-			prevButton.addEventListener('click', () => {
-				if (currentImageIndex > 0) {
-					currentImageIndex--;
-					showImage(currentImageIndex);
-				}
-			});
+	// Gombok eseménykezelői
+	const prevButton = section.querySelector('.prev');
+	const nextButton = section.querySelector('.next');
 
-			nextButton.addEventListener('click', () => {
-				if (currentImageIndex < images.length - 1) {
-					currentImageIndex++;
-					showImage(currentImageIndex);
-				}
-			});
-		}
-	});
+	if (prevButton && nextButton) {
+		prevButton.addEventListener('click', () => {
+			if (currentImageIndex > 0) {
+				currentImageIndex--;
+				showImage(currentImageIndex);
+			}
+		});
+
+		nextButton.addEventListener('click', () => {
+			if (currentImageIndex < images.length - 1) {
+				currentImageIndex++;
+				showImage(currentImageIndex);
+			}
+		});
+	}
 });

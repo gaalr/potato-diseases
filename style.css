@@ -103,6 +103,7 @@ h2 {
 	max-height: 400px; /* A képek maximális magassága */
 	object-fit: contain; /* A kép arányait megőrzi */
 	margin-bottom: 1rem; /* Térköz a kép alján */
+	font-weight: bold;
 }
 
 /* Az aktív képek megjelenítése */
@@ -170,4 +171,71 @@ figcaption {
 		max-height: 300px; /* Kis képernyőn kisebb képek */
 		object-fit: cover; /* Kép megfelelő illesztése */
 	}
+}
+
+/* Footer alapstílusok */
+.footer {
+	background-color: #333;
+	color: white;
+	padding: 1rem 0;
+	text-align: center;
+	position: fixed; /* Rögzítjük az oldalsó pozícióját */
+	bottom: 0; /* Az oldal aljára pozicionáljuk */
+	width: 100%; /* Az egész szélességet kitölti */
+	left: 0;
+}
+
+.footer .footer-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer p {
+	margin-bottom: 1rem;
+	font-size: 1rem;
+}
+
+.footer nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	gap: 1rem;
+}
+
+.footer nav a {
+	text-decoration: none;
+	color: white;
+}
+
+.footer nav a:hover {
+	color: lightgray;
+}
+
+/* Reszponzív megoldás */
+@media (max-width: 768px) {
+	.footer .footer-content {
+		flex-direction: column;
+	}
+
+	.footer nav ul {
+		flex-direction: column;
+	}
+}
+
+/* Az oldal középre igazítása */
+.main-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 100vh; /* A teljes magasságot kitölti */
+	font-family: 'Orbitron', sans-serif;
+}
+
+.main-content h1 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
 }
