@@ -23,3 +23,47 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 });
+
+// Az összes szekció kiválasztása
+const sections = document.querySelectorAll('.disease');
+sections.forEach((section) => {
+	const images = section.querySelectorAll('.image-gallery img');
+	let currentImageIndex = 0;
+
+	// Az első kép megjelenítése
+	images[currentImageIndex].style.display = 'block';
+
+	// A pagination gombok
+	const prevButton = section.querySelector('.prev');
+	const nextButton = section.querySelector('.next');
+
+	// Kép váltó funkció
+	function showImage(index) {
+		// Elrejti az összes képet
+		images.forEach((img) => {
+			img.style.display = 'none';
+		});
+
+		// Megjeleníti a kiválasztott képet
+		images[index].style.display = 'block';
+
+		// A gombok láthatóságát állítjuk
+		prevButton.disabled = index === 0;
+		nextButton.disabled = index === images.length - 1;
+	}
+
+	// Eseménykezelők
+	prevButton.addEventListener('click', () => {
+		if (currentImageIndex > 0) {
+			currentImageIndex--;
+			showImage(currentImageIndex);
+		}
+	});
+
+	nextButton.addEventListener('click', () => {
+		if (currentImageIndex < images.length - 1) {
+			currentImageIndex++;
+			showImage(currentImageIndex);
+		}
+	});
+});
