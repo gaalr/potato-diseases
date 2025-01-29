@@ -72,25 +72,16 @@ h2 {
 	}
 }
 
-.active,
-.accordion:hover {
-	background-color: chocolate;
-}
-
-.panel {
-	padding: 0 18px;
-	background-color: white;
-	display: none;
-	overflow: hidden;
-}
-
 /* Diseases sections */
-
-.diseases {
+.disease {
 	background-color: whitesmoke;
 	padding: 1rem;
 	margin-top: 1rem;
 	border: 1px solid #333;
 	text-align: center;
-	display: none;
+	display: none; /* Alapértelmezésben el van rejtve */
+}
+
+.disease.active {
+	display: block; /* Megjelenik kattintásra */
 }
