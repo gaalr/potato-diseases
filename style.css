@@ -72,19 +72,6 @@ h2 {
 	}
 }
 
-/* Accordion */
-.accordion {
-	background-color: aliceblue;
-	color: black;
-	cursor: pointer;
-	padding: 18px;
-	width: 100%;
-	text-align: left;
-	border: none;
-	outline: none;
-	transition: 1s;
-}
-
 .active,
 .accordion:hover {
 	background-color: chocolate;
@@ -98,22 +85,12 @@ h2 {
 }
 
 /* Diseases sections */
+
 .diseases {
-	font-family: sans-serif;
-}
-
-#fungal-diseases {
-	background-color: whitesmoke;
-	padding: 1rem;
-	margin-top: 1rem;
-	border: 1px solid #333;
-	text-align: center; /* Tartalom középre igazítása */
-}
-
-#bacterial-diseases {
 	background-color: whitesmoke;
 	padding: 1rem;
 	margin-top: 1rem;
 	border: 1px solid #333;
 	text-align: center;
+	display: none;
 }
