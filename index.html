@@ -137,13 +137,21 @@
 				</p>
 				<nav>
 					<ul>
-						<li><a href="#">Kapcsolat</a></li>
-						<li><a href="#">Adatvédelmi irányelvek</a></li>
-						<li><a href="#">Felhasználási feltételek</a></li>
+						<li><a href="#" id="contactLink">Kapcsolat</a></li>
+						<li><a href="#" id="privacyLink">Adatvédelmi irányelvek</a></li>
+						<li><a href="#" id="termsLink">Felhasználási feltételek</a></li>
 					</ul>
 				</nav>
 			</div>
 		</footer>
+		<!-- Modal struktúrája -->
+		<div id="modal" class="modal hidden">
+			<div class="modal-content">
+				<button class="close-modal">&times;</button>
+				<h2 id="modalTitle"></h2>
+				<p id="modalContent"></p>
+			</div>
+		</div>
 		<script src="script.js"></script>
 	</body>
 </html>
