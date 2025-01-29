@@ -224,14 +224,14 @@ figcaption {
 	}
 }
 
-/* Az oldal középre igazítása */
+/* Main Content settings */
 .main-content {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	min-height: 100vh; /* A teljes magasságot kitölti */
+	min-height: 50vh; /* A teljes magasságot kitölti */
 	font-family: 'Orbitron', sans-serif;
 }
 
