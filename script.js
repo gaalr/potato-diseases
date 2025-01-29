@@ -1,8 +1,8 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function () {
+	// Kattintásra történő szekcióváltás
 	const navLinks = document.querySelectorAll('.nav-link');
-
 	navLinks.forEach((link) => {
 		link.addEventListener('click', function (event) {
 			event.preventDefault(); // Megakadályozza az oldal újratöltését
@@ -22,48 +22,55 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 	});
-});
 
-// Az összes szekció kiválasztása
-const sections = document.querySelectorAll('.disease');
-sections.forEach((section) => {
-	const images = section.querySelectorAll('.image-gallery img');
-	let currentImageIndex = 0;
+	// Képváltás funkció minden szekcióra
+	const diseaseSections = document.querySelectorAll('.disease');
+	diseaseSections.forEach((section) => {
+		const images = section.querySelectorAll('.image-item');
+		let currentImageIndex = 0;
 
-	// Az első kép megjelenítése
-	images[currentImageIndex].style.display = 'block';
-
-	// A pagination gombok
-	const prevButton = section.querySelector('.prev');
-	const nextButton = section.querySelector('.next');
-
-	// Kép váltó funkció
-	function showImage(index) {
-		// Elrejti az összes képet
-		images.forEach((img) => {
-			img.style.display = 'none';
-		});
-
-		// Megjeleníti a kiválasztott képet
-		images[index].style.display = 'block';
-
-		// A gombok láthatóságát állítjuk
-		prevButton.disabled = index === 0;
-		nextButton.disabled = index === images.length - 1;
-	}
-
-	// Eseménykezelők
-	prevButton.addEventListener('click', () => {
-		if (currentImageIndex > 0) {
-			currentImageIndex--;
-			showImage(currentImageIndex);
+		// Ha van kép, az első képet megjelenítjük
+		if (images.length > 0) {
+			images[currentImageIndex].classList.add('active');
 		}
-	});
 
-	nextButton.addEventListener('click', () => {
-		if (currentImageIndex < images.length - 1) {
-			currentImageIndex++;
-			showImage(currentImageIndex);
+		// Képváltás
+		function showImage(index) {
+			console.log('Jelenleg az alábbi indexű kép van kiválasztva: ', index);
+
+			// Elrejtjük az összes képet
+			images.forEach((img, i) => {
+				img.classList.remove('active');
+			});
+
+			// Az aktuális képet megjelenítjük
+			images[index].classList.add('active');
+
+			// Frissítjük a gombok állapotát
+			const prevButton = section.querySelector('.prev');
+			const nextButton = section.querySelector('.next');
+			prevButton.disabled = index === 0;
+			nextButton.disabled = index === images.length - 1;
+		}
+
+		// Gombok eseménykezelői
+		const prevButton = section.querySelector('.prev');
+		const nextButton = section.querySelector('.next');
+
+		if (prevButton && nextButton) {
+			prevButton.addEventListener('click', () => {
+				if (currentImageIndex > 0) {
+					currentImageIndex--;
+					showImage(currentImageIndex);
+				}
+			});
+
+			nextButton.addEventListener('click', () => {
+				if (currentImageIndex < images.length - 1) {
+					currentImageIndex++;
+					showImage(currentImageIndex);
+				}
+			});
 		}
 	});
 });
