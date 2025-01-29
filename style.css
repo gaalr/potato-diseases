@@ -1,11 +1,9 @@
-/* Reset */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* Body */
 body {
 	font-family: 'Orbitron', sans-serif;
 	min-height: 100vh;
@@ -15,7 +13,7 @@ body {
 	background-color: aquamarine;
 }
 
-/* Headings */
+/* HEADINGS */
 h1 {
 	text-align: center;
 	color: #333;
@@ -27,7 +25,7 @@ h2 {
 	margin-bottom: 1rem;
 }
 
-/* Navbar alapstílusok */
+/* NAVBAR */
 .navbar {
 	background-color: #333;
 	padding: 10px 20px;
@@ -36,7 +34,6 @@ h2 {
 	border-radius: 10px;
 }
 
-/* Lista stílusok */
 .navbar-list {
 	display: flex;
 	flex-wrap: wrap; /* Több sorba törés kisebb képernyőn */
@@ -60,46 +57,31 @@ h2 {
 	color: chocolate;
 }
 
-/* Reszponzív megoldás kisebb képernyőre */
-@media (max-width: 768px) {
-	.navbar-list {
-		flex-direction: column; /* Függőleges elrendezés */
-		align-items: flex-start; /* Balra igazított elemek */
-	}
-
-	.navbar-list li {
-		margin-bottom: 10px; /* Térköz az elemek között */
-		margin-right: 0; /* Oldalsó margó eltávolítása */
-	}
-}
-
-/* Diseases sections */
+/* DISEASES SECTIONS */
 .disease {
 	background-color: whitesmoke;
 	padding: 1rem;
 	margin-top: 1rem;
 	border: 1px solid #333;
 	text-align: center;
-	display: none; /* Alapértelmezetten el van rejtve */
+	display: none; /* Default */
 	border-radius: 10px;
 }
 
 .disease.active {
-	display: block; /* Megjelenik kattintásra */
+	display: block;
 }
 
-/* Kép galéria */
+/* IMAGE PROPERTIES */
 .image-gallery {
 	display: flex;
 	justify-content: center;
 	gap: 1rem;
-	flex-wrap: wrap; /* Több sorba törés, ha szükséges */
-	position: relative; /* A gombokat a galéria tartalomhoz igazítjuk */
+	flex-wrap: wrap;
+	position: relative;
 }
-
-/* Kép alapértelmezett stílusa */
 .image-item {
-	display: none; /* Alapértelmezetten el van rejtve */
+	display: none; /* Default */
 	width: 100%;
 	max-width: 600px; /* A képek maximális szélessége */
 	max-height: 400px; /* A képek maximális magassága */
@@ -107,13 +89,28 @@ h2 {
 	margin-bottom: 1rem; /* Térköz a kép alján */
 	font-weight: bold;
 }
+figure {
+	text-align: center;
+	margin: 0;
+}
 
-/* Az aktív képek megjelenítése */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+figcaption {
+	margin-top: 0.5rem;
+	font-size: 0.9rem;
+	color: #555;
+}
+
+/* ACTIVE IMAGES */
 .image-item.active {
 	display: block;
 }
 
-/* Gombok stílusa */
+/* PAGINATION */
 .pagination {
 	display: flex;
 	justify-content: center;
@@ -138,44 +135,7 @@ h2 {
 	cursor: not-allowed;
 }
 
-figure {
-	text-align: center;
-	margin: 0;
-}
-
-img {
-	max-width: 100%;
-	height: auto;
-}
-
-figcaption {
-	margin-top: 0.5rem;
-	font-size: 0.9rem;
-	color: #555;
-}
-
-/* Alapértelmezés szerint elrejtjük a nem aktív képeket */
-.image-item {
-	display: none;
-	width: 100%; /* A szélesség beállítása */
-	max-height: 400px; /* Magasság korlátozása */
-	object-fit: cover; /* A képek megfelelő kitöltése */
-}
-
-/* Reszponzív kép kezelés */
-@media (max-width: 768px) {
-	.image-gallery {
-		flex-direction: column; /* Kisebb képernyőn függőleges elrendezés */
-	}
-
-	.image-gallery img {
-		width: 100%;
-		max-height: 300px; /* Kis képernyőn kisebb képek */
-		object-fit: cover; /* Kép megfelelő illesztése */
-	}
-}
-
-/* Footer alapstílusok */
+/* FOOTER */
 .footer {
 	background-color: #333;
 	color: white;
@@ -215,18 +175,7 @@ figcaption {
 	color: lightgray;
 }
 
-/* Reszponzív megoldás */
-@media (max-width: 768px) {
-	.footer .footer-content {
-		flex-direction: column;
-	}
-
-	.footer nav ul {
-		flex-direction: column;
-	}
-}
-
-/* Main Content settings */
+/* HERO */
 .main-content {
 	display: flex;
 	flex-direction: column;
@@ -242,7 +191,7 @@ figcaption {
 	margin-bottom: 1rem;
 }
 
-/* Modal */
+/* MODAL */
 .hidden {
 	display: none;
 }
@@ -256,7 +205,6 @@ figcaption {
 	padding: 20px;
 	box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
 	z-index: 1000;
-
 	border-radius: 10px;
 }
 
@@ -280,4 +228,40 @@ figcaption {
 	height: 100%;
 	background: rgba(0, 0, 0, 0.5);
 	z-index: 999;
+}
+/* RESPONSIVE DESIGN */
+/* NAVBAR */
+@media (max-width: 768px) {
+	.navbar-list {
+		flex-direction: column; /* Függőleges elrendezés */
+		align-items: flex-start; /* Balra igazított elemek */
+	}
+
+	.navbar-list li {
+		margin-bottom: 10px; /* Térköz az elemek között */
+		margin-right: 0; /* Oldalsó margó eltávolítása */
+	}
+}
+
+/* FOOTER */
+@media (max-width: 768px) {
+	.footer .footer-content {
+		flex-direction: column;
+	}
+
+	.footer nav ul {
+		flex-direction: column;
+	}
+}
+/* IMAGE */
+@media (max-width: 768px) {
+	.image-gallery {
+		flex-direction: column; /* Kisebb képernyőn függőleges elrendezés */
+	}
+
+	.image-gallery img {
+		width: 100%;
+		max-height: 300px; /* Kis képernyőn kisebb képek */
+		object-fit: cover; /* Kép megfelelő illesztése */
+	}
 }
