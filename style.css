@@ -115,7 +115,8 @@ h2 {
 	display: flex;
 	justify-content: center;
 	gap: 1rem; /* Gombok között térköz */
-	margin-top: 1rem; /* Különbség a képek és a gombok között */
+	margin-top: 2rem; /* Különbség a képek és a gombok között */
+	width: 100%; /* A gombok teljes szélessége */
 }
 
 .pagination button {
