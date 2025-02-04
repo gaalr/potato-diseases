@@ -79,20 +79,21 @@ diseaseSections.forEach((section) => {
 	}
 });
 
-// Modal
+/* MODAL */
+
 const modal = document.getElementById('modal');
 const closeModal = document.querySelector('.close-modal');
 const modalTitle = document.getElementById('modalTitle');
 const modalContent = document.getElementById('modalContent');
 
-// Modal megjelenítésére szolgáló függvény
+// Showing the modal
 function showModal(title, content) {
 	modalTitle.textContent = title;
 	modalContent.innerHTML = content;
 	modal.classList.remove('hidden');
 }
 
-// Linkek kattintása
+// Contact link
 document.getElementById('contactLink').addEventListener('click', function () {
 	showModal(
 		'Kapcsolat',
@@ -100,13 +101,36 @@ document.getElementById('contactLink').addEventListener('click', function () {
 	);
 });
 
+// Privacy link
 document.getElementById('privacyLink').addEventListener('click', function () {
 	showModal(
 		'Adatvédelmi irányelvek',
-		'Itt találod az adatvédelmi irányelveinket...'
+		`
+        <h3>1. Bevezetés</h3>
+        <p>Ez az adatvédelmi tájékoztató tájékoztatást nyújt arról, hogy a weboldalunk (a továbbiakban: "Weboldal") milyen adatokat gyűjt és hogyan kezeli azokat.</p>
+        
+        <h3>2. Milyen adatokat gyűjtünk?</h3>
+        <p>A Weboldal nem gyűjt és nem tárol személyes adatokat a látogatóiról. Az oldal kizárólag információs céllal működik, és nem használ regisztrációs rendszert vagy felhasználói fiókokat.</p>
+
+        <h3>3. Google Fonts használata</h3>
+        <p>A Weboldal betűtípusokat tölt be a Google Fonts szolgáltatásból. A Google Fonts a betűtípusokat közvetlenül a Google szervereiről tölti be, amelynek során a látogatók IP-címe továbbításra kerülhet a Google felé.</p>
+        <p><a href="https://policies.google.com/privacy" target="_blank">Google adatvédelmi irányelvek</a></p>
+        <p>Ha szeretné elkerülni a Google Fonts betöltését, használhat böngészőbővítményeket, amelyek blokkolják a külső betűtípusok betöltését.</p>
+
+        <h3>4. Sütik (Cookies)</h3>
+        <p>A Weboldal nem használ sütiket.</p>
+
+        <h3>5. Külső hivatkozások</h3>
+        <p>Előfordulhat, hogy a Weboldal külső weboldalakra mutató hivatkozásokat tartalmaz. Ezekre az oldalakra a saját adatvédelmi szabályaik vonatkoznak, ezért javasoljuk, hogy mindig olvassa el az adott oldal adatvédelmi tájékoztatóját.</p>
+
+        <h3>6. Kapcsolat</h3>
+        <p>Ha bármilyen kérdése van az adatvédelemmel kapcsolatban, az alábbi e-mail címen elérhet minket:</p>
+        <p>✉ <a href="mailto:SAJATEMAIL@example.com">SAJATEMAIL@example.com</a></p>
+        `
 	);
 });
 
+// Terms link
 document.getElementById('termsLink').addEventListener('click', function () {
 	showModal(
 		'Felhasználási feltételek',

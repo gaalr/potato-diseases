@@ -36,7 +36,7 @@ h2 {
 
 .navbar-list {
 	display: flex;
-	flex-wrap: wrap; /* Több sorba törés kisebb képernyőn */
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	list-style-type: none;
@@ -81,12 +81,12 @@ h2 {
 	position: relative;
 }
 .image-item {
-	display: none; /* Default */
+	display: none;
 	width: 100%;
-	max-width: 600px; /* A képek maximális szélessége */
-	max-height: 400px; /* A képek maximális magassága */
-	object-fit: contain; /* A kép arányait megőrzi */
-	margin-bottom: 1rem; /* Térköz a kép alján */
+	max-width: 600px;
+	max-height: 400px;
+	object-fit: contain;
+	margin-bottom: 1rem;
 	font-weight: bold;
 }
 figure {
@@ -114,9 +114,9 @@ figcaption {
 .pagination {
 	display: flex;
 	justify-content: center;
-	gap: 1rem; /* Gombok között térköz */
-	margin-top: 2rem; /* Különbség a képek és a gombok között */
-	width: 100%; /* A gombok teljes szélessége */
+	gap: 1rem;
+	margin-top: 2rem;
+	width: 100%;
 }
 
 .pagination button {
@@ -141,9 +141,9 @@ figcaption {
 	color: white;
 	padding: 1rem 0;
 	text-align: center;
-	position: fixed; /* Rögzítjük az oldalsó pozícióját */
-	bottom: 0; /* Az oldal aljára pozicionáljuk */
-	width: 100%; /* Az egész szélességet kitölti */
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 	left: 0;
 }
 
@@ -233,13 +233,13 @@ figcaption {
 /* NAVBAR */
 @media (max-width: 768px) {
 	.navbar-list {
-		flex-direction: column; /* Függőleges elrendezés */
-		align-items: flex-start; /* Balra igazított elemek */
+		flex-direction: column;
+		align-items: flex-start;
 	}
 
 	.navbar-list li {
-		margin-bottom: 10px; /* Térköz az elemek között */
-		margin-right: 0; /* Oldalsó margó eltávolítása */
+		margin-bottom: 10px;
+		margin-right: 0;
 	}
 }
 
@@ -256,12 +256,12 @@ figcaption {
 /* IMAGE */
 @media (max-width: 768px) {
 	.image-gallery {
-		flex-direction: column; /* Kisebb képernyőn függőleges elrendezés */
+		flex-direction: column;
 	}
 
 	.image-gallery img {
 		width: 100%;
-		max-height: 300px; /* Kis képernyőn kisebb képek */
-		object-fit: cover; /* Kép megfelelő illesztése */
+		max-height: 300px;
+		object-fit: cover;
 	}
 }
