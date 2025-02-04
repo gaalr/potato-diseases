@@ -200,16 +200,23 @@ figcaption {
 	position: fixed;
 	top: 50%;
 	left: 50%;
+	width: 90%;
+	max-width: 600px; /* Maximális szélesség */
+	max-height: 80vh; /* Maximális magasság (a képernyő 80%-a) */
 	transform: translate(-50%, -50%);
 	background-color: burlywood;
 	padding: 20px;
 	box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
 	z-index: 1000;
 	border-radius: 10px;
+	overflow: auto;
 }
 
 .modal-content {
 	text-align: center;
+	max-height: 70vh; /* Tartalom maximális magassága */
+	overflow-y: auto; /* Függőleges görgetés engedélyezése */
+	padding-right: 10px; /* Görgetősáv mellett legyen kis hely */
 }
 
 .close-modal {
@@ -263,5 +270,12 @@ figcaption {
 		width: 100%;
 		max-height: 300px;
 		object-fit: cover;
+	}
+}
+/* MODAL */
+@media (max-width: 480px) {
+	.modal {
+		width: 95%;
+		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
 	}
 }
