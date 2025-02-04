@@ -7,89 +7,276 @@
 body {
 	font-family: 'Orbitron', sans-serif;
 	min-height: 100vh;
-	max-width: 1200px;
+	max-width: 2000px;
 	margin: 0 auto;
 	padding: 1rem;
 	background-color: aquamarine;
 }
 
-.title {
+/* HEADINGS */
+h1 {
 	text-align: center;
 	color: #333;
-	padding: 1rem;
+	margin-bottom: 1rem;
 }
 
-/* Navbar */
+h2 {
+	color: #333;
+	margin-bottom: 1rem;
+}
+
+/* NAVBAR */
 .navbar {
 	background-color: #333;
-	padding: 1rem;
-	position: fixed;
-	margin: auto;
-	width: 100%;
-	z-index: 1000;
-	border-radius: 5px;
+	padding: 10px 20px;
+	margin-bottom: 1rem;
+	letter-spacing: 2px;
+	border-radius: 10px;
 }
+
 .navbar-list {
 	display: flex;
-	justify-content: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	align-items: center;
-	color: white;
 	list-style-type: none;
-	padding: 1rem;
+	padding: 0;
+	margin: 0;
 }
+
 .navbar-list li {
 	margin-right: 1rem;
 }
+
 .navbar-list a {
 	color: white;
 	text-decoration: none;
 }
+
 .navbar-list a:hover {
 	color: chocolate;
 }
 
-/* Main Content */
-.diseases {
-	font-family: sans-serif;
-	margin-top: 70px; /* Space for the navbar */
-}
-
-/* Fungal diseases */
-#fungal-diseases {
-	background-color: bisque;
+/* DISEASES SECTIONS */
+.disease {
+	background-color: whitesmoke;
 	padding: 1rem;
 	margin-top: 1rem;
 	border: 1px solid #333;
-	border-radius: 5px;
-}
-#fungal-diseases h2 {
-	color: #333;
-	margin-bottom: 1rem;
+	text-align: center;
+	display: none; /* Default */
+	border-radius: 10px;
 }
 
-/* Bacterial diseases */
-#bacterial-diseases {
-	background-color: #f0f0f0;
-	padding: 1rem;
-	margin-top: 1rem;
+.disease.active {
+	display: block;
+}
+
+/* IMAGE PROPERTIES */
+.image-gallery {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+	position: relative;
+}
+.image-item {
+	display: none;
+	width: 100%;
+	max-width: 600px;
+	max-height: 400px;
+	object-fit: contain;
+	margin-bottom: 1rem;
+	font-weight: bold;
+}
+figure {
+	text-align: center;
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+figcaption {
+	margin-top: 0.5rem;
+	font-size: 0.9rem;
+	color: #555;
+}
+
+/* ACTIVE IMAGES */
+.image-item.active {
+	display: block;
+}
+
+/* PAGINATION */
+.pagination {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 2rem;
+	width: 100%;
+}
+
+.pagination button {
+	padding: 10px 20px;
 	border: 1px solid #333;
-	border-radius: 5px;
+	background-color: white;
+	cursor: pointer;
 }
-#bacterial-diseases h2 {
-	color: #333;
+
+.pagination button:hover {
+	background-color: lightgray;
+}
+
+.pagination button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+/* FOOTER */
+.footer {
+	background-color: #333;
+	color: white;
+	padding: 1rem 0;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+}
+
+.footer .footer-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer p {
+	margin-bottom: 1rem;
+	font-size: 1rem;
+}
+
+.footer nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	gap: 1rem;
+}
+
+.footer nav a {
+	text-decoration: none;
+	color: white;
+}
+
+.footer nav a:hover {
+	color: lightgray;
+}
+
+/* HERO */
+.main-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 50vh; /* A teljes magasságot kitölti */
+	font-family: 'Orbitron', sans-serif;
+}
+
+.main-content h1 {
+	font-size: 2rem;
 	margin-bottom: 1rem;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+/* MODAL */
+.hidden {
+	display: none;
+}
+
+.modal {
+	position: fixed;
+	color: black;
+	top: 50%;
+	left: 50%;
+	width: 90%;
+	max-width: 600px; /* Maximális szélesség */
+	max-height: 80vh; /* Maximális magasság (a képernyő 80%-a) */
+	transform: translate(-50%, -50%);
+	background-color: burlywood;
+	padding: 20px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+	z-index: 1000;
+	border-radius: 10px;
+	overflow: auto;
+}
+
+.modal-content {
+	text-align: center;
+	max-height: 70vh; /* Tartalom maximális magassága */
+	overflow-y: auto; /* Függőleges görgetés engedélyezése */
+	padding-right: 10px; /* Görgetősáv mellett legyen kis hely */
+}
+
+.close-modal {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+}
+/* RESPONSIVE DESIGN */
+/* NAVBAR */
+@media (max-width: 768px) {
 	.navbar-list {
 		flex-direction: column;
+		align-items: center;
 	}
+
 	.navbar-list li {
+		margin-bottom: 10px;
 		margin-right: 0;
-		margin-bottom: 1rem;
 	}
-	.diseases {
-		padding: 0.5rem;
+}
+
+/* FOOTER */
+@media (max-width: 768px) {
+	.footer .footer-content {
+		flex-direction: column;
+	}
+
+	.footer nav ul {
+		flex-direction: column;
+	}
+}
+/* IMAGE */
+@media (max-width: 768px) {
+	.image-gallery {
+		flex-direction: column;
+	}
+
+	.image-gallery img {
+		width: 100%;
+		max-height: 300px;
+		object-fit: cover;
+	}
+}
+/* MODAL */
+@media (max-width: 480px) {
+	.modal {
+		width: 95%;
+		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
 	}
 }

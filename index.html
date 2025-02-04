@@ -23,148 +23,135 @@
 			<h1 class="title">
 				Üdvözöljük a legfontosabb burgonya gumóbetegségeket bemutató oldalunkon!
 			</h1>
+			<!-- NAVBAR -->
 			<nav class="navbar">
 				<ol class="navbar-list">
-					<li><a href="#fungal-diseases">Gombás betegségek</a></li>
-					<li><a href="#bacterial-diseases">Baktériumos betegségek</a></li>
-					<li><a href="#">Vírusos betegségek</a></li>
-					<li><a href="#">Nematódák által okozott betegségek</a></li>
-					<li><a href="#">Élettani rendellenességek</a></li>
-					<li><a href="#">Egyéb kártevők által okozott károk</a></li>
+					<li>
+						<a href="#" class="nav-link" data-target="fungal"
+							>Gombás betegségek</a
+						>
+					</li>
+					<li>
+						<a href="#" class="nav-link" data-target="bacterial"
+							>Baktériumos betegségek</a
+						>
+					</li>
+					<li>
+						<a href="#" class="nav-link" data-target="viral"
+							>Vírusos betegségek</a
+						>
+					</li>
+					<li>
+						<a href="#" class="nav-link" data-target="nematode"
+							>Nematódák által okozott betegségek</a
+						>
+					</li>
+					<li>
+						<a href="#" class="nav-link" data-target="physiological"
+							>Élettani rendellenességek</a
+						>
+					</li>
+					<li>
+						<a href="#" class="nav-link" data-target="other"
+							>Egyéb kártevők által okozott károk</a
+						>
+					</li>
 				</ol>
 			</nav>
+			<!-- HERO -->
+			<div class="main-content">
+				<h1>Kérem válasszon a betegség kategóriák közül!</h1>
+			</div>
 		</header>
+		<!-- MAIN PART -->
 		<main class="diseases">
-			<section id="fungal-diseases">
+			<section class="disease fungal">
 				<h2>Gombás betegségek</h2>
-				<details>
-					<summary>Burgonyavész (Phytophtora infestans)</summary>
-					<p>Tünetek a gumón:</p>
-					<ul>
-						<li>Barna, kemény, szabálytalan alakú foltok a gumók felszínén.</li>
-						<li>
-							A foltok mélyre hatolnak, a gumó belsejében is barnás elszíneződés
-							figyelhető meg.
-						</li>
-						<li>Nedves körülmények között a gumók rothadnak.</li>
-						<li>
-							Fertőzési körülmények: Nedves, párás időjárás és fertőzött lomb.
-						</li>
-					</ul>
-				</details>
-				<details>
-					<summary>Alternárioltosság (Alternaria solani)</summary>
-					<p>Tünetek a gumón:</p>
-					<ul>
-						<li>Barna, száraz foltok jelennek meg a gumók felszínén.</li>
-						<li>A foltok körül világos sávok figyelhetők meg.</li>
-						<li>
-							A fertőzött gumók belsejében barna színű, kemény szövetek
-							keletkeznek.
-						</li>
-						<li>
-							Fertőzési körülmények: Meleg, száraz időjárás és fertőzött növényi
-							maradványok.
-						</li>
-					</ul>
-				</details>
-				<details>
-					<summary>Rhizoctoniás betegség (Rhizoctonia solani)</summary>
-					<p>Tünetek a gumón:</p>
-					<ul>
-						<li>
-							Fekete, kemény képletek (fekete varasodás) jelennek meg a gumó
-							felszínén.
-						</li>
-						<li>
-							A gumó csírázása gyengülhet, és deformálódott gumók alakulhatnak
-							ki.
-						</li>
-					</ul>
-					<p>
-						Fertőzési körülmények: Hideg, nedves talaj és fertőzött vetőgumó.
-					</p>
-				</details>
-				<details>
-					<summary>Fuzáriumos rothadás (Fusarium spp.)</summary>
-					<p>Tünetek a gumón:</p>
-					<ul>
-						<li>
-							A gumó belsejében barna vagy fekete rothadás jelenik meg, amely
-							mélyebbre hatol.
-						</li>
-						<li>A gumók szövete porladóvá válik.</li>
-					</ul>
-					<p>
-						Fertőzési körülmények: Meleg, száraz környezet, nem megfelelő
-						tárolási körülmények.
-					</p>
-				</details>
-				<details>
-					<summary>Fehérpenészes rothadás (Sclerotinia sclerotiorum)</summary>
-					<p>Tünetek a gumón:</p>
-					<ul>
-						<li>Fehér, vattaszerű penész a gumók felszínén.</li>
-						<li>
-							A fertőzött gumók rothadni kezdenek, és a penész terjedése
-							következtében a gumók teljesen elrothadhatnak.
-						</li>
-					</ul>
-					<p>
-						Fertőzési körülmények: Nedves, párás környezet és fertőzött növényi
-						maradványok.
-					</p>
-				</details>
+				<div class="image-gallery">
+					<figure class="image-item active">
+						<img src="imgmod/fitoftora-gumon2.jpeg" alt="Fitoftóra" width="" />
+						<figcaption>Burgonyavész (fitoftóra)</figcaption>
+					</figure>
+					<figure class="image-item">
+						<img src="imgmod/gumo-fuzarium2.jpeg" alt="Fuzárium" />
+						<figcaption>Fuzáriumos gumórothadás</figcaption>
+					</figure>
+					<figure class="image-item">
+						<img
+							src="imgmod/rizoktonias-varasodas2.jpeg"
+							alt="Rizoktóniás varasodás"
+						/>
+						<figcaption>Rizoktóniás varasodás</figcaption>
+					</figure>
+					<figure class="image-item">
+						<img
+							src="imgmod/spongosporas-varasodas2.jpeg"
+							alt="Spongospórás varasodás"
+						/>
+						<figcaption>Spongospórás varasodás</figcaption>
+					</figure>
+				</div>
+				<div class="pagination">
+					<button class="prev" disabled>Előző</button>
+					<button class="next">Következő</button>
+				</div>
 			</section>
-			<section id="bacterial-diseases">
+			<section class="disease bacterial">
 				<h2>Baktériumos betegségek</h2>
-				<details>
-					<summary>Baktériumos rothadás (Pectobacterium spp.)</summary>
-					<p>Tünetek a gumón:</p>
-					<ul>
-						<li>Rózsaszínű, puha rothadás a gumó belsejében.</li>
-						<li>Fertőzött gumók gyakran kellemetlen szagot árasztanak.</li>
-						<li>
-							Az érintett részek vízfoltosak, és a szövetek könnyen elrothadnak.
-						</li>
-					</ul>
-					<p>
-						Fertőzési körülmények: Meleg, nedves környezet, rossz tárolási
-						körülmények.
-					</p>
-				</details>
-				<details>
-					<summary>Soft rot (Erwinia carotovora)</summary>
-					<p>Tünetek a gumón:</p>
-					<ul>
-						<li>
-							Szürke, zöldes, nyálkás rothadás, mely gyorsan terjedhet a gumók
-							belsejében.
-						</li>
-						<li>A fertőzött gumók belseje vizes állagúvá válik.</li>
-					</ul>
-					<p>
-						Fertőzési körülmények: Nedves, hűvös tárolás, vagy sérült
-						gumófelületek miatt történhet a fertőzés.
-					</p>
-				</details>
-				<details>
-					<summary>
-						Rothadás (Clavibacter michiganensis subsp. sepedonicus)
-					</summary>
-					<p>Tünetek a gumón:</p>
-					<ul>
-						<li>Vizes, fekete foltok a gumók belsejében.</li>
-						<li>
-							A fertőzött gumók elveszítik szilárdságukat és puhasá válnak.
-						</li>
-					</ul>
-					<p>
-						Fertőzési körülmények: Hosszú ideig tartó tárolás, és magas
-						páratartalom a tárolóhelyen.
-					</p>
-				</details>
+				<!-- <div class="image-gallery">
+					<img src="image1.jpg" alt="Baktériumos kép 1" />
+					<img src="image2.jpg" alt="Baktériumos kép 2" />
+					<img src="image3.jpg" alt="Baktériumos kép 3" />
+					<img src="image4.jpg" alt="Baktériumos kép 4" />
+				</div> -->
+				<div class="pagination">
+					<button class="prev">Előző</button>
+					<button class="next">Következő</button>
+				</div>
+			</section>
+			<section class="disease viral">
+				<h2>Vírusos betegségek</h2>
+				<!-- <div class="image-gallery">
+					<img src="image1.jpg" alt="Vírusos kép 1" />
+					<img src="image2.jpg" alt="Vírusos kép 2" />
+					<img src="image3.jpg" alt="Vírusos kép 3" />
+					<img src="image4.jpg" alt="Vírusos kép 4" />
+				</div> -->
+				<div class="pagination">
+					<button class="prev">Előző</button>
+					<button class="next">Következő</button>
+				</div>
+			</section>
+			<section class="disease nematode">
+				<h2>Nematódák által okozott betegségek</h2>
+			</section>
+			<section class="disease physiological">
+				<h2>Élettani rendellenességek</h2>
+			</section>
+			<section class="disease other">
+				<h2>Egyéb kártevők által okozott károk</h2>
 			</section>
 		</main>
+		<!-- FOOTER WITH MODAL-->
+		<footer class="footer">
+			<div class="footer-content">
+				<p>&copy; 2025 Burgonyagumó betegségek. Minden jog fenntartva.</p>
+				<nav>
+					<ul>
+						<li><a href="#" id="contactLink">Kapcsolat</a></li>
+						<li><a href="#" id="privacyLink">Adatvédelmi irányelvek</a></li>
+						<li><a href="#" id="termsLink">Felhasználási feltételek</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div id="modal" class="modal hidden">
+				<div class="modal-content">
+					<button class="close-modal">&times;</button>
+					<h2 id="modalTitle"></h2>
+					<p id="modalContent"></p>
+				</div>
+			</div>
+		</footer>
+		<script src="script.js"></script>
 	</body>
 </html>
