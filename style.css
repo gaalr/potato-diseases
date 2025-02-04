@@ -27,6 +27,9 @@ h2 {
 
 /* NAVBAR */
 .navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: #333;
 	padding: 10px 20px;
 	margin-bottom: 1rem;
@@ -36,8 +39,7 @@ h2 {
 
 .navbar-list {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	list-style-type: none;
 	padding: 0;
