@@ -123,7 +123,11 @@ document.getElementById('privacyLink').addEventListener('click', function () {
         <h3>5. Külső hivatkozások</h3>
         <p>Előfordulhat, hogy a Weboldal külső weboldalakra mutató hivatkozásokat tartalmaz. Ezekre az oldalakra a saját adatvédelmi szabályaik vonatkoznak, ezért javasoljuk, hogy mindig olvassa el az adott oldal adatvédelmi tájékoztatóját.</p>
 
-        <h3>6. Kapcsolat</h3>
+		<h3>6. Webtárhelyszolgáltató (Hosting)</h3>
+		<p>A Weboldal tárhelyszolgáltatója a Netlify, Inc. (székhely: 2325 3rd Street, Suite 215, San Francisco, CA 94107, USA). A Weboldalhoz kapcsolódó technikai infrastruktúrát a Netlify biztosítja, amelynek következtében a látogatók egyes adatai, például IP-címük és böngészőjük technikai adatai a Netlify szerverein kerülhetnek feldolgozásra.</p>
+		<p><a href="https://www.netlify.com/privacy/ target="_blank">Netlify adatvédelmi irányelvek</a></p>
+
+        <h3>7. Kapcsolat</h3>
         <p>Ha bármilyen kérdése van az adatvédelemmel kapcsolatban, az alábbi e-mail címen elérhet minket:</p>
         <p>✉ <a href="mailto:SAJATEMAIL@example.com">SAJATEMAIL@example.com</a></p>
         `
@@ -134,7 +138,26 @@ document.getElementById('privacyLink').addEventListener('click', function () {
 document.getElementById('termsLink').addEventListener('click', function () {
 	showModal(
 		'Felhasználási feltételek',
-		'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.'
+		`
+        <h3>1. Bevezetés</h3>
+        <p>Jelen felhasználási feltételek (a továbbiakban: „Feltételek”) szabályozzák a [Weboldal neve] weboldal (a továbbiakban: „Weboldal”) látogatóinak jogait és kötelezettségeit. A Weboldal használatával Ön elfogadja a jelen Feltételeket.</p>
+        
+        <h3>2. A Weboldal célja</h3>
+        <p>A Weboldal kizárólag információs céllal működik, és a burgonyabetegségekkel kapcsolatos képeket és információkat tartalmaz. A Weboldalon elérhető tartalmak nem minősülnek szakmai vagy jogi tanácsadásnak.</p>
+
+        <h3>3. Szerzői jogok és tartalomhasználat</h3>
+        <p>A Weboldalon található képek jogvédettek, azok másolása, terjesztése vagy bármilyen módon történő felhasználása kizárólag a szerző írásbeli engedélyével történhet. A szöveges tartalmak szintén szerzői jogvédelem alatt állhatnak. Az oldalon található információk saját célra történő felhasználása engedélyezett, de üzleti vagy nyilvános felhasználás esetén előzetes engedély szükséges.</p>
+
+        <h3>4. Külső hivatkozások</h3>
+        <p>A Weboldalon külső weboldalakra mutató hivatkozások szerepelhetnek (például: Google Fonts, forrásanyagok). Nem vállalunk felelősséget ezek tartalmáért vagy adatkezelési gyakorlatáért.</p>
+
+        <h3>5. Felelősség kizárása</h3>
+        <p>A Weboldalon található információk tájékoztató jellegűek, pontosságukért vagy aktualitásukért felelősséget nem vállalunk. A Weboldal használatából eredő közvetlen vagy közvetett károkért semmilyen felelősséget nem vállalunk.</p>
+
+        <h3>6. A feltételek módosítása</h3>
+        <p>Fenntartjuk a jogot, hogy a jelen Feltételeket bármikor módosítsuk. A módosításokat a Weboldalon tesszük közzé, és azok a közzétételt követően azonnal hatályba lépnek.</p>
+        <p>✉ <a href="mailto:SAJATEMAIL@example.com">SAJATEMAIL@example.com</a></p>
+        `
 	);
 });
 
