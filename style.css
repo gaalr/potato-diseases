@@ -14,6 +14,12 @@ body {
 }
 
 /* HEADINGS */
+.welcome-text {
+	text-align: center;
+	color: #333;
+	margin-bottom: 1rem;
+	text-decoration: none;
+}
 h1 {
 	text-align: center;
 	color: #333;
@@ -35,7 +41,6 @@ h2 {
 	margin-bottom: 1rem;
 	letter-spacing: 2px;
 	border-radius: 10px;
-	width: 100%;
 }
 
 .navbar-list {
@@ -62,6 +67,12 @@ h2 {
 }
 
 /* DISEASES SECTIONS */
+.diseases {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
 .disease {
 	background-color: whitesmoke;
 	padding: 1rem;
@@ -70,6 +81,7 @@ h2 {
 	text-align: center;
 	display: none; /* Default */
 	border-radius: 10px;
+	max-width: 700px; /* Módosítani a kép szélességnek megfelelően!!!!! */
 }
 
 .disease.active {
@@ -235,6 +247,9 @@ figcaption {
 /* RESPONSIVE DESIGN */
 /* Phones - Below 544px (34em) */
 @media (max-width: 34em) {
+	body {
+		min-height: 150vh;
+	}
 	.title {
 		font-size: 1.3rem;
 		padding: 0 0.625rem;
@@ -253,13 +268,13 @@ figcaption {
 		width: 95%;
 		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
 	}
-	.footer {
-		display: none;
-	}
 }
 
 /* Smaller tablets - below 704px (44em) */
 @media (max-width: 44em) {
+	body {
+		min-height: 150vh;
+	}
 	.title {
 		font-size: 1.5rem;
 		padding: 0 0.5rem;
@@ -274,9 +289,7 @@ figcaption {
 		margin-bottom: 1rem;
 		margin-right: 0;
 	}
-	.footer {
-		display: none;
-	}
+
 	.main-content {
 		padding: 1rem;
 	}
@@ -307,9 +320,9 @@ figcaption {
 		margin-bottom: 1rem;
 		margin-right: 0;
 	}
-	.footer {
+	/* .footer {
 		display: none;
-	}
+	} */
 	.main-content {
 		padding: 1rem;
 	}
@@ -320,7 +333,7 @@ figcaption {
 	}
 }
 
-/* Smaller desktop - below 1344px (84em) */
+/* Smaller desktop - below 1344px (84em)
 @media (max-width: 84em) {
 	.container {
 		padding: 40px;
@@ -328,4 +341,4 @@ figcaption {
 	.header {
 		font-size: 3rem;
 	}
-}
+} */
