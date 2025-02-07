@@ -248,7 +248,7 @@ figcaption {
 /* Phones - Below 544px (34em) */
 @media (max-width: 34em) {
 	body {
-		min-height: 140dvh;
+		min-height: 160dvh;
 	}
 	.title {
 		font-size: 1.3rem;
@@ -290,7 +290,7 @@ figcaption {
 /* Smaller tablets - below 704px (44em) */
 @media (max-width: 44em) {
 	body {
-		min-height: 140dvh;
+		min-height: 160dvh;
 	}
 	.title {
 		font-size: 1.3rem;
