@@ -50,7 +50,7 @@ h2 {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 }
 
 .navbar-list li {
@@ -257,7 +257,7 @@ figcaption {
 	.navbar-list {
 		flex-direction: column;
 		align-items: center;
-		font-size: 0.8rem;
+		font-size: 0.3rem;
 	}
 
 	.navbar-list li {
@@ -267,6 +267,21 @@ figcaption {
 	.modal {
 		width: 95%;
 		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
+	}
+	.footer {
+		padding: 1rem;
+		position: fixed;
+		bottom: -50px; /* Adjust based on footer height */
+		left: 0;
+		width: 100%;
+		background: #333;
+		color: white;
+		text-align: center;
+		padding: 10px;
+		transition: bottom 0.3s ease-in-out;
+	}
+	.footer:hover {
+		bottom: 0;
 	}
 }
 
