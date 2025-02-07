@@ -1,0 +1,369 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Orbitron', sans-serif;
+	min-height: 100vh;
+	max-width: 2000px;
+	margin: 0 auto;
+	padding: 1rem;
+	background-color: aquamarine;
+}
+
+/* HEADINGS */
+.welcome-text {
+	text-align: center;
+	color: #333;
+	margin-bottom: 1rem;
+	text-decoration: none;
+}
+h1 {
+	text-align: center;
+	color: #333;
+	margin-bottom: 1rem;
+}
+
+h2 {
+	color: #333;
+	margin-bottom: 1rem;
+}
+
+/* NAVBAR */
+.navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #333;
+	padding: 10px 20px;
+	margin-bottom: 1rem;
+	letter-spacing: 2px;
+	border-radius: 10px;
+}
+
+.navbar-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	/* flex-wrap: wrap; */
+}
+
+.navbar-list li {
+	margin-right: 1rem;
+}
+
+.navbar-list a {
+	color: white;
+	text-decoration: none;
+}
+
+.navbar-list a:hover {
+	color: chocolate;
+}
+
+/* DISEASES SECTIONS */
+.diseases {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.disease {
+	background-color: whitesmoke;
+	padding: 1rem;
+	margin-top: 1rem;
+	border: 1px solid #333;
+	text-align: center;
+	display: none; /* Default */
+	border-radius: 10px;
+	max-width: 700px; /* Módosítani a kép szélességnek megfelelően!!!!! */
+}
+
+.disease.active {
+	display: block;
+}
+
+/* IMAGE PROPERTIES */
+.image-gallery {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+	position: relative;
+}
+.image-item {
+	display: none;
+	object-fit: contain;
+	margin-bottom: 1rem;
+	font-weight: bold;
+	align-items: center;
+}
+figure {
+	text-align: center;
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+figcaption {
+	margin-top: 0.5rem;
+	font-size: 0.9rem;
+	color: #555;
+}
+
+/* ACTIVE IMAGES */
+.image-item.active {
+	display: block;
+}
+
+/* PAGINATION */
+.pagination {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 2rem;
+	width: 100%;
+}
+
+.pagination button {
+	padding: 10px 20px;
+	border: 1px solid #333;
+	background-color: white;
+	cursor: pointer;
+}
+
+.pagination button:hover {
+	background-color: lightgray;
+}
+
+.pagination button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+/* FOOTER */
+.footer {
+	background-color: #333;
+	color: white;
+	padding: 1rem 0;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+}
+
+.footer .footer-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer p {
+	margin-bottom: 1rem;
+	font-size: 1rem;
+}
+
+.footer nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	gap: 1rem;
+}
+
+.footer nav a {
+	text-decoration: none;
+	color: white;
+}
+
+.footer nav a:hover {
+	color: lightgray;
+}
+
+/* HERO */
+.main-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 50vh; /* A teljes magasságot kitölti */
+	font-family: 'Orbitron', sans-serif;
+}
+
+.main-content h1 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+/* MODAL */
+
+.hidden {
+	display: none;
+}
+
+.modal {
+	position: fixed;
+	color: black;
+	top: 50%;
+	left: 50%;
+	width: 90%;
+	max-width: 600px; /* Maximális szélesség */
+	max-height: 80vh; /* Maximális magasság (a képernyő 80%-a) */
+	transform: translate(-50%, -50%);
+	background-color: burlywood;
+	padding: 20px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+	z-index: 1000;
+	border-radius: 10px;
+	overflow: auto;
+	backdrop-filter: blur(5px);
+}
+
+.modal-content {
+	text-align: center;
+	max-height: 70vh; /* Tartalom maximális magassága */
+	overflow-y: auto; /* Függőleges görgetés engedélyezése */
+	padding-right: 10px; /* Görgetősáv mellett legyen kis hely */
+}
+
+.close-modal {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+/* RESPONSIVE DESIGN */
+/* Phones - Below 544px (34em) */
+@media (max-width: 34em) {
+	body {
+		min-height: 150dvh;
+	}
+	.welcome-text {
+		font-size: 1.5rem;
+	}
+
+	.navbar-list {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		font-size: 0.4rem;
+	}
+
+	.navbar-list li {
+		margin-bottom: 1rem;
+		margin-right: 0;
+	}
+	.modal {
+		width: 95%;
+		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
+	}
+	.footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: #333;
+		color: white;
+		text-align: center;
+		padding: 1rem;
+		transition: transform 0.3s ease-in-out;
+		transform: translateY(100%); /* Kezdetben el van rejtve */
+	}
+
+	.footer.show {
+		transform: translateY(0); /* Megjelenik, ha az oldal alján vagyunk */
+	}
+}
+
+/* Smaller tablets - below 704px (44em) */
+@media (max-width: 44em) {
+	body {
+		min-height: 150dvh;
+	}
+	.welcome-text {
+		font-size: 1.5rem;
+	}
+	.navbar-list {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		font-size: 1rem;
+	}
+
+	.navbar-list li {
+		margin-bottom: 1rem;
+		margin-right: 0;
+	}
+	.modal {
+		width: 95%;
+		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
+	}
+	.footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: #333;
+		color: white;
+		text-align: center;
+		padding: 1rem;
+		transition: transform 0.3s ease-in-out;
+		transform: translateY(100%); /* Kezdetben el van rejtve */
+	}
+
+	.footer.show {
+		transform: translateY(0); /* Megjelenik, ha az oldal alján vagyunk */
+	}
+}
+/* Bigger tablets - below 944px (59em) */
+@media (max-width: 59em) {
+	body {
+		min-height: 150dvh;
+	}
+	.welcome-text {
+		font-size: 1.5rem;
+	}
+	.navbar-list {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		font-size: 1rem;
+	}
+
+	.navbar-list li {
+		margin-bottom: 1rem;
+		margin-right: 0;
+	}
+	.modal {
+		width: 95%;
+		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
+	}
+	.footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: #333;
+		color: white;
+		text-align: center;
+		padding: 1rem;
+		transition: transform 0.3s ease-in-out;
+		transform: translateY(100%); /* Kezdetben el van rejtve */
+	}
+
+	.footer.show {
+		transform: translateY(0); /* Megjelenik, ha az oldal alján vagyunk */
+	}
+}
