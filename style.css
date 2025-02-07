@@ -257,7 +257,8 @@ figcaption {
 	.navbar-list {
 		flex-direction: column;
 		align-items: center;
-		font-size: 0.3rem;
+		text-align: center;
+		font-size: 0.4rem;
 	}
 
 	.navbar-list li {
@@ -289,7 +290,7 @@ figcaption {
 /* Smaller tablets - below 704px (44em) */
 @media (max-width: 44em) {
 	body {
-		min-height: 150vh;
+		min-height: 130vh;
 	}
 	.title {
 		font-size: 1.5rem;
