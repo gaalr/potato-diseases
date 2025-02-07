@@ -248,7 +248,7 @@ figcaption {
 /* Phones - Below 544px (34em) */
 @media (max-width: 34em) {
 	body {
-		min-height: 180dvh;
+		min-height: 150dvh;
 	}
 	.welcome-text {
 		font-size: 1.5rem;
@@ -290,7 +290,7 @@ figcaption {
 /* Smaller tablets - below 704px (44em) */
 @media (max-width: 44em) {
 	body {
-		min-height: 180dvh;
+		min-height: 150dvh;
 	}
 	.welcome-text {
 		font-size: 1.5rem;
@@ -299,7 +299,7 @@ figcaption {
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		font-size: 0.4rem;
+		font-size: 1rem;
 	}
 
 	.navbar-list li {
@@ -330,7 +330,7 @@ figcaption {
 /* Bigger tablets - below 944px (59em) */
 @media (max-width: 59em) {
 	body {
-		min-height: 180dvh;
+		min-height: 150dvh;
 	}
 	.welcome-text {
 		font-size: 1.5rem;
@@ -339,7 +339,7 @@ figcaption {
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		font-size: 0.4rem;
+		font-size: 1rem;
 	}
 
 	.navbar-list li {
