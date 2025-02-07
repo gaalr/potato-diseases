@@ -248,7 +248,7 @@ figcaption {
 /* Phones - Below 544px (34em) */
 @media (max-width: 34em) {
 	body {
-		min-height: 170dvh;
+		min-height: 140dvh;
 	}
 	.title {
 		font-size: 1.3rem;
@@ -290,36 +290,43 @@ figcaption {
 /* Smaller tablets - below 704px (44em) */
 @media (max-width: 44em) {
 	body {
-		min-height: 130vh;
+		min-height: 140dvh;
 	}
 	.title {
-		font-size: 1.5rem;
-		padding: 0 0.5rem;
+		font-size: 1.3rem;
+		padding: 0 0.625rem;
 	}
 	.navbar-list {
 		flex-direction: column;
 		align-items: center;
-		font-size: 0.8rem;
+		text-align: center;
+		font-size: 0.4rem;
 	}
 
 	.navbar-list li {
 		margin-bottom: 1rem;
 		margin-right: 0;
 	}
-
-	.main-content {
-		padding: 1rem;
+	.modal {
+		width: 95%;
+		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
 	}
-	.image-gallery {
-		flex-direction: column;
-	}
-
-	.image-gallery img {
+	.footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
 		width: 100%;
-		max-height: 300px;
-		object-fit: cover;
+		background: #333;
+		color: white;
+		text-align: center;
+		padding: 1rem;
+		transition: transform 0.3s ease-in-out;
+		transform: translateY(100%); /* Kezdetben el van rejtve */
 	}
-}
+
+	.footer.show {
+		transform: translateY(0); /* Megjelenik, ha az oldal alján vagyunk */
+	}
 
 /* Bigger tablets - below 944px (59em) */
 @media (max-width: 59em) {
