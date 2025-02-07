@@ -269,19 +269,20 @@ figcaption {
 		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
 	}
 	.footer {
-		padding: 1rem;
 		position: fixed;
-		bottom: -50px; /* Adjust based on footer height */
+		bottom: 0;
 		left: 0;
 		width: 100%;
 		background: #333;
 		color: white;
 		text-align: center;
-		padding: 10px;
-		transition: bottom 0.3s ease-in-out;
+		padding: 1rem;
+		transition: transform 0.3s ease-in-out;
+		transform: translateY(100%); /* Kezdetben el van rejtve */
 	}
-	.footer:hover {
-		bottom: 0;
+
+	.footer.show {
+		transform: translateY(0); /* Megjelenik, ha az oldal alján vagyunk */
 	}
 }
 
@@ -347,13 +348,3 @@ figcaption {
 		align-items: center;
 	}
 }
-
-/* Smaller desktop - below 1344px (84em)
-@media (max-width: 84em) {
-	.container {
-		padding: 40px;
-	}
-	.header {
-		font-size: 3rem;
-	}
-} */
