@@ -14,6 +14,12 @@ body {
 }
 
 /* HEADINGS */
+.welcome-text {
+	text-align: center;
+	color: #333;
+	margin-bottom: 1rem;
+	text-decoration: none;
+}
 h1 {
 	text-align: center;
 	color: #333;
@@ -27,6 +33,9 @@ h2 {
 
 /* NAVBAR */
 .navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: #333;
 	padding: 10px 20px;
 	margin-bottom: 1rem;
@@ -36,12 +45,12 @@ h2 {
 
 .navbar-list {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+	flex-wrap: wrap;
 }
 
 .navbar-list li {
@@ -58,6 +67,12 @@ h2 {
 }
 
 /* DISEASES SECTIONS */
+.diseases {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
 .disease {
 	background-color: whitesmoke;
 	padding: 1rem;
@@ -66,6 +81,7 @@ h2 {
 	text-align: center;
 	display: none; /* Default */
 	border-radius: 10px;
+	max-width: 700px; /* Módosítani a kép szélességnek megfelelően!!!!! */
 }
 
 .disease.active {
@@ -82,12 +98,10 @@ h2 {
 }
 .image-item {
 	display: none;
-	width: 100%;
-	max-width: 600px;
-	max-height: 400px;
 	object-fit: contain;
 	margin-bottom: 1rem;
 	font-weight: bold;
+	align-items: center;
 }
 figure {
 	text-align: center;
@@ -192,6 +206,7 @@ figcaption {
 }
 
 /* MODAL */
+
 .hidden {
 	display: none;
 }
@@ -211,6 +226,7 @@ figcaption {
 	z-index: 1000;
 	border-radius: 10px;
 	overflow: auto;
+	backdrop-filter: blur(5px);
 }
 
 .modal-content {
@@ -228,41 +244,55 @@ figcaption {
 	cursor: pointer;
 }
 
-.overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
-	z-index: 999;
-}
 /* RESPONSIVE DESIGN */
-/* NAVBAR */
-@media (max-width: 768px) {
+/* Phones - Below 544px (34em) */
+@media (max-width: 34em) {
+	body {
+		min-height: 150vh;
+	}
+	.title {
+		font-size: 1.3rem;
+		padding: 0 0.625rem;
+	}
 	.navbar-list {
 		flex-direction: column;
 		align-items: center;
+		font-size: 0.8rem;
 	}
 
 	.navbar-list li {
-		margin-bottom: 10px;
+		margin-bottom: 1rem;
 		margin-right: 0;
 	}
-}
-
-/* FOOTER */
-@media (max-width: 768px) {
-	.footer .footer-content {
-		flex-direction: column;
-	}
-
-	.footer nav ul {
-		flex-direction: column;
+	.modal {
+		width: 95%;
+		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
 	}
 }
-/* IMAGE */
-@media (max-width: 768px) {
+
+/* Smaller tablets - below 704px (44em) */
+@media (max-width: 44em) {
+	body {
+		min-height: 150vh;
+	}
+	.title {
+		font-size: 1.5rem;
+		padding: 0 0.5rem;
+	}
+	.navbar-list {
+		flex-direction: column;
+		align-items: center;
+		font-size: 0.8rem;
+	}
+
+	.navbar-list li {
+		margin-bottom: 1rem;
+		margin-right: 0;
+	}
+
+	.main-content {
+		padding: 1rem;
+	}
 	.image-gallery {
 		flex-direction: column;
 	}
@@ -273,10 +303,42 @@ figcaption {
 		object-fit: cover;
 	}
 }
-/* MODAL */
-@media (max-width: 480px) {
-	.modal {
-		width: 95%;
-		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
+
+/* Bigger tablets - below 944px (59em) */
+@media (max-width: 59em) {
+	.title {
+		font-size: 1.9rem;
+		padding: 0 0.5rem;
+	}
+	.navbar-list {
+		flex-direction: column;
+		align-items: center;
+		font-size: 0.8rem;
+	}
+
+	.navbar-list li {
+		margin-bottom: 1rem;
+		margin-right: 0;
+	}
+	/* .footer {
+		display: none;
+	} */
+	.main-content {
+		padding: 1rem;
+	}
+
+	.image-gallery img {
+		width: 100%;
+		align-items: center;
 	}
 }
+
+/* Smaller desktop - below 1344px (84em)
+@media (max-width: 84em) {
+	.container {
+		padding: 40px;
+	}
+	.header {
+		font-size: 3rem;
+	}
+} */

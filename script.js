@@ -92,6 +92,10 @@ function showModal(title, content) {
 	modalContent.innerHTML = content;
 	modal.classList.remove('hidden');
 }
+// Closing the modal
+closeModal.addEventListener('click', function () {
+	modal.classList.add('hidden');
+});
 
 // Contact link
 document.getElementById('contactLink').addEventListener('click', function () {
@@ -159,11 +163,6 @@ document.getElementById('termsLink').addEventListener('click', function () {
         <p>✉ <a href="mailto:SAJATEMAIL@example.com">SAJATEMAIL@example.com</a></p>
         `
 	);
-});
-
-// Modal bezárása
-closeModal.addEventListener('click', function () {
-	modal.classList.add('hidden');
 });
 
 // Esc billentyű megnyomása esetén bezárás
