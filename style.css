@@ -248,7 +248,7 @@ figcaption {
 /* Phones - Below 544px (34em) */
 @media (max-width: 34em) {
 	body {
-		min-height: 170vh;
+		min-height: 170dvh;
 	}
 	.title {
 		font-size: 1.3rem;
