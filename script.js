@@ -185,3 +185,16 @@ document
 	.addEventListener('click', function (event) {
 		event.stopPropagation();
 	});
+
+// Showing footer (only in responsive mode)
+const footer = document.querySelector('.footer');
+
+window.addEventListener('scroll', () => {
+	if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+		// Ha az oldal alján vagyunk, mutassuk a footert
+		footer.classList.add('show');
+	} else {
+		// Ha nem vagyunk az alján, rejtse el
+		footer.classList.remove('show');
+	}
+});

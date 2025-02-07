@@ -50,7 +50,7 @@ h2 {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 }
 
 .navbar-list li {
@@ -257,7 +257,8 @@ figcaption {
 	.navbar-list {
 		flex-direction: column;
 		align-items: center;
-		font-size: 0.8rem;
+		text-align: center;
+		font-size: 0.4rem;
 	}
 
 	.navbar-list li {
@@ -268,12 +269,28 @@ figcaption {
 		width: 95%;
 		max-height: 90vh; /* Kis képernyőn kicsit nagyobb modal */
 	}
+	.footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: #333;
+		color: white;
+		text-align: center;
+		padding: 1rem;
+		transition: transform 0.3s ease-in-out;
+		transform: translateY(100%); /* Kezdetben el van rejtve */
+	}
+
+	.footer.show {
+		transform: translateY(0); /* Megjelenik, ha az oldal alján vagyunk */
+	}
 }
 
 /* Smaller tablets - below 704px (44em) */
 @media (max-width: 44em) {
 	body {
-		min-height: 150vh;
+		min-height: 130vh;
 	}
 	.title {
 		font-size: 1.5rem;
@@ -332,13 +349,3 @@ figcaption {
 		align-items: center;
 	}
 }
-
-/* Smaller desktop - below 1344px (84em)
-@media (max-width: 84em) {
-	.container {
-		padding: 40px;
-	}
-	.header {
-		font-size: 3rem;
-	}
-} */
