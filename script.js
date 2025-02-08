@@ -201,7 +201,7 @@ document.getElementById('termsLink').addEventListener('click', function () {
 			'Felhasználási feltételek',
 			`
         <h3>1. Bevezetés</h3>
-        <p>Jelen felhasználási feltételek (a továbbiakban: „Feltételek”) szabályozzák a [Weboldal neve] weboldal (a továbbiakban: „Weboldal”) látogatóinak jogait és kötelezettségeit. A Weboldal használatával Ön elfogadja a jelen Feltételeket.</p>
+        <p>Jelen felhasználási feltételek (a továbbiakban: „Feltételek”) szabályozzák a Burgonyagumó Betegségek weboldal (a továbbiakban: „Weboldal”) látogatóinak jogait és kötelezettségeit. A Weboldal használatával Ön elfogadja a jelen Feltételeket.</p>
         
         <h3>2. A Weboldal célja</h3>
         <p>A Weboldal kizárólag információs céllal működik, és a burgonyabetegségekkel kapcsolatos képeket és információkat tartalmaz. A Weboldalon elérhető tartalmak nem minősülnek szakmai vagy jogi tanácsadásnak.</p>
@@ -225,7 +225,7 @@ document.getElementById('termsLink').addEventListener('click', function () {
 			'Terms of Service',
 			`
         <h3>1. Introduction</h3>
-		<p>These Terms of Use (hereinafter referred to as the "Terms") govern the rights and obligations of visitors to the [Website Name] website (hereinafter referred to as the "Website"). By accessing or using the Website, you acknowledge that you have read, understood, and agreed to be bound by these Terms.</p>
+		<p>These Terms of Use (hereinafter referred to as the "Terms") govern the rights and obligations of visitors to the Potato Tuber Diseases website (hereinafter referred to as the "Website"). By accessing or using the Website, you acknowledge that you have read, understood, and agreed to be bound by these Terms.</p>
 
 		<h3>2. Purpose of the Website</h3>
 		<p>The Website is intended solely for informational purposes and provides images and information related to potato diseases. The content available on the Website does not constitute professional, medical, or legal advice and should not be relied upon as such.</p>
