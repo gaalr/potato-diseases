@@ -12,7 +12,20 @@ body {
 	padding: 1rem;
 	background-color: aquamarine;
 }
+/* LANGUAGE SELECTOR */
+.language-selector {
+	margin-top: 20px;
+	font-size: 16px;
+}
 
+.language-selector label {
+	margin-right: 10px;
+}
+
+.language-selector select {
+	padding: 5px;
+	font-size: 16px;
+}
 /* HEADINGS */
 .welcome-text {
 	text-align: center;
