@@ -3,9 +3,9 @@
 /* LANGUAGE SWITCHING */
 function changeLanguage(selectElement) {
 	const language = selectElement.value; // hu or en
-	document.documentElement.lang = language; // Az oldal nyelvét is frissítjük
+	document.documentElement.lang = language; // Update the lang attribute of the html element
 
-	// Minden elem frissítése
+	// All elements with data-hu or data-en attribute
 	const elements = document.querySelectorAll('[data-hu], [data-en]');
 
 	elements.forEach((element) => {
@@ -15,9 +15,6 @@ function changeLanguage(selectElement) {
 			element.textContent = element.getAttribute('data-hu');
 		}
 	});
-
-	// A modal tartalmának frissítése a nyelv alapján
-	updateModalContent(language);
 }
 
 /* DYNAMIC CONTENT SECTION SWITCHING WITH NAVIGATION LINKS */
@@ -136,16 +133,24 @@ document
 		event.stopPropagation();
 	});
 
+/* LINKS */
 // Contact link
 document.getElementById('contactLink').addEventListener('click', function () {
-	showModal(
-		'Kapcsolat',
-		'Ha kérdésed van, írj nekünk: <strong>email@domain.com</strong>'
-	);
+	const lang = document.documentElement.lang;
+	if (lang === 'hu') {
+		showModal(
+			'Kapcsolat',
+			'Ha kérdésed van, írj nekünk: <strong>email@domain.com</strong>'
+		);
+	} else {
+		showModal(
+			'Contact',
+			'If you have any questions, write to us: <strong>email@domain.com</strong>'
+		);
+	}
 });
-
 document.getElementById('privacyLink').addEventListener('click', function () {
-	const lang = document.documentElement.lang; // Get current language
+	const lang = document.documentElement.lang;
 	if (lang === 'hu') {
 		showModal(
 			'Adatvédelmi irányelvek',
@@ -194,9 +199,11 @@ document.getElementById('privacyLink').addEventListener('click', function () {
 });
 // Terms link
 document.getElementById('termsLink').addEventListener('click', function () {
-	showModal(
-		'Felhasználási feltételek',
-		`
+	const lang = document.documentElement.lang;
+	if (lang === 'hu') {
+		showModal(
+			'Felhasználási feltételek',
+			`
         <h3>1. Bevezetés</h3>
         <p>Jelen felhasználási feltételek (a továbbiakban: „Feltételek”) szabályozzák a [Weboldal neve] weboldal (a továbbiakban: „Weboldal”) látogatóinak jogait és kötelezettségeit. A Weboldal használatával Ön elfogadja a jelen Feltételeket.</p>
         
@@ -216,18 +223,43 @@ document.getElementById('termsLink').addEventListener('click', function () {
         <p>Fenntartjuk a jogot, hogy a jelen Feltételeket bármikor módosítsuk. A módosításokat a Weboldalon tesszük közzé, és azok a közzétételt követően azonnal hatályba lépnek.</p>
         <p>✉ <a href="mailto:SAJATEMAIL@example.com">SAJATEMAIL@example.com</a></p>
         `
-	);
+		);
+	} else {
+		showModal(
+			'Terms of Service',
+			`
+        <h3>1. Introduction</h3>
+		<p>These Terms of Use (hereinafter referred to as the "Terms") govern the rights and obligations of visitors to the [Website Name] website (hereinafter referred to as the "Website"). By accessing or using the Website, you acknowledge that you have read, understood, and agreed to be bound by these Terms.</p>
+
+		<h3>2. Purpose of the Website</h3>
+		<p>The Website is intended solely for informational purposes and provides images and information related to potato diseases. The content available on the Website does not constitute professional, medical, or legal advice and should not be relied upon as such.</p>
+		
+		<h3>3. Intellectual Property and Content Usage</h3>
+		<p>All images and textual content on the Website are protected by copyright laws. Unauthorized reproduction, distribution, modification, or any other form of use is strictly prohibited without the prior written consent of the copyright owner. Content may be used for personal, non-commercial purposes; however, any commercial or public use requires express prior authorization.</p>
+		
+		<h3>4. External Links</h3>
+		<p>The Website may contain links to third-party websites (e.g., Google Fonts, reference materials). These links are provided for informational purposes only, and we do not assume any responsibility for the content, privacy policies, or practices of such external sites.</p>
+		
+		<h3>5. Disclaimer of Liability</h3>
+		<p>All information provided on the Website is for general informational purposes only. While we endeavor to ensure the accuracy and timeliness of the content, we do not guarantee its completeness or correctness. Under no circumstances shall we be held liable for any direct, indirect, incidental, or consequential damages arising from the use of, or reliance on, the information provided on the Website.</p>
+		
+		<h3>6. Amendments to the Terms</h3>
+		<p>We reserve the right to modify these Terms at any time without prior notice. Any changes will be posted on the Website and will become effective immediately upon publication. Continued use of the Website after such modifications constitutes acceptance of the revised Terms.</p>
+		<p>✉ <a href="mailto:SAJATEMAIL@example.com">SAJATEMAIL@example.com</a></p>
+        `
+		);
+	}
 });
 
-// Showing footer (only in responsive mode)
+/* FOOTER */
 const footer = document.querySelector('.footer');
 
 window.addEventListener('scroll', () => {
 	if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-		// Ha az oldal alján vagyunk, mutassuk a footert
+		// Show the footer if we are at the bottom
 		footer.classList.add('show');
 	} else {
-		// Ha nem vagyunk az alján, rejtse el
+		// Hide the footer if we are not at the bottom
 		footer.classList.remove('show');
 	}
 });

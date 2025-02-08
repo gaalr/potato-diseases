@@ -351,7 +351,7 @@ figcaption {
 	}
 }
 /* Bigger tablets - below 944px (59em) */
-@media (max-width: 59em) {
+/* @media (max-width: 59em) {
 	body {
 		min-height: 150dvh;
 	}
@@ -389,4 +389,4 @@ figcaption {
 	.footer.show {
 		transform: translateY(0); /* Megjelenik, ha az oldal alján vagyunk */
 	}
-}
+} */
