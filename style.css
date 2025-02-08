@@ -5,7 +5,8 @@
 }
 
 body {
-	font-family: 'Orbitron', sans-serif;
+	font-family: 'Lora', serif;
+	font-optical-sizing: auto;
 	min-height: 100vh;
 	max-width: 2000px;
 	margin: 0 auto;
@@ -210,7 +211,6 @@ figcaption {
 	align-items: center;
 	text-align: center;
 	min-height: 50vh; /* A teljes magasságot kitölti */
-	font-family: 'Orbitron', sans-serif;
 }
 
 .main-content h1 {

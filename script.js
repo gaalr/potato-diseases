@@ -1,4 +1,5 @@
 'use strict';
+
 /* LANGUAGE SWITCHING */
 function changeLanguage(selectElement) {
 	const language = selectElement.value; // hu or en
@@ -14,7 +15,11 @@ function changeLanguage(selectElement) {
 			element.textContent = element.getAttribute('data-hu');
 		}
 	});
+
+	// A modal tartalmának frissítése a nyelv alapján
+	updateModalContent(language);
 }
+
 /* DYNAMIC CONTENT SECTION SWITCHING WITH NAVIGATION LINKS */
 document.addEventListener('DOMContentLoaded', function () {
 	const navLinks = document.querySelectorAll('.nav-link');
@@ -139,39 +144,54 @@ document.getElementById('contactLink').addEventListener('click', function () {
 	);
 });
 
-// Privacy link
 document.getElementById('privacyLink').addEventListener('click', function () {
-	showModal(
-		'Adatvédelmi irányelvek',
-		`
-        <h3>1. Bevezetés</h3>
-        <p>Ez az adatvédelmi tájékoztató tájékoztatást nyújt arról, hogy a weboldalunk (a továbbiakban: "Weboldal") milyen adatokat gyűjt és hogyan kezeli azokat.</p>
-        
-        <h3>2. Milyen adatokat gyűjtünk?</h3>
-        <p>A Weboldal nem gyűjt és nem tárol személyes adatokat a látogatóiról. Az oldal kizárólag információs céllal működik, és nem használ regisztrációs rendszert vagy felhasználói fiókokat.</p>
-
-        <h3>3. Google Fonts használata</h3>
-        <p>A Weboldal betűtípusokat tölt be a Google Fonts szolgáltatásból. A Google Fonts a betűtípusokat közvetlenül a Google szervereiről tölti be, amelynek során a látogatók IP-címe továbbításra kerülhet a Google felé.</p>
-        <p><a href="https://policies.google.com/privacy" target="_blank">Google adatvédelmi irányelvek</a></p>
-        <p>Ha szeretné elkerülni a Google Fonts betöltését, használhat böngészőbővítményeket, amelyek blokkolják a külső betűtípusok betöltését.</p>
-
-        <h3>4. Sütik (Cookies)</h3>
-        <p>A Weboldal nem használ sütiket.</p>
-
-        <h3>5. Külső hivatkozások</h3>
-        <p>Előfordulhat, hogy a Weboldal külső weboldalakra mutató hivatkozásokat tartalmaz. Ezekre az oldalakra a saját adatvédelmi szabályaik vonatkoznak, ezért javasoljuk, hogy mindig olvassa el az adott oldal adatvédelmi tájékoztatóját.</p>
-
-		<h3>6. Webtárhelyszolgáltató (Hosting)</h3>
-		<p>A Weboldal tárhelyszolgáltatója a Netlify, Inc. (székhely: 2325 3rd Street, Suite 215, San Francisco, CA 94107, USA). A Weboldalhoz kapcsolódó technikai infrastruktúrát a Netlify biztosítja, amelynek következtében a látogatók egyes adatai, például IP-címük és böngészőjük technikai adatai a Netlify szerverein kerülhetnek feldolgozásra.</p>
-		<p><a href="https://www.netlify.com/privacy/ target="_blank">Netlify adatvédelmi irányelvek</a></p>
-
-        <h3>7. Kapcsolat</h3>
-        <p>Ha bármilyen kérdése van az adatvédelemmel kapcsolatban, az alábbi e-mail címen elérhet minket:</p>
-        <p>✉ <a href="mailto:SAJATEMAIL@example.com">SAJATEMAIL@example.com</a></p>
-        `
-	);
+	const lang = document.documentElement.lang; // Get current language
+	if (lang === 'hu') {
+		showModal(
+			'Adatvédelmi irányelvek',
+			`
+			<h3>1. Bevezetés</h3>
+			<p>Ez az adatvédelmi tájékoztató tájékoztatást nyújt arról, hogy a weboldalunk (a továbbiakban: "Weboldal") milyen adatokat gyűjt és hogyan kezeli azokat.</p>
+			<h3>2. Milyen adatokat gyűjtünk?</h3>
+			<p>A Weboldal nem gyűjt és nem tárol személyes adatokat a látogatóiról. Az oldal kizárólag információs céllal működik, és nem használ regisztrációs rendszert vagy felhasználói fiókokat.</p>
+			<h3>3. Google Fonts használata</h3>
+			<p>A Weboldal betűtípusokat tölt be a Google Fonts szolgáltatásból. A Google Fonts a betűtípusokat közvetlenül a Google szervereiről tölti be, amelynek során a látogatók IP-címe továbbításra kerülhet a Google felé.</p>
+			<p><a href="https://policies.google.com/privacy" target="_blank">Google adatvédelmi irányelvek</a></p>
+			<h3>4. Sütik (Cookies)</h3>
+			<p>A Weboldal nem használ sütiket.</p>
+			<h3>5. Külső hivatkozások</h3>
+			<p>Előfordulhat, hogy a Weboldal külső weboldalakra mutató hivatkozásokat tartalmaz. Ezekre az oldalakra a saját adatvédelmi szabályaik vonatkoznak, ezért javasoljuk, hogy mindig olvassa el az adott oldal adatvédelmi tájékoztatóját.</p>
+			<h3>6. Webtárhelyszolgáltató (Hosting)</h3>
+			<p>A Weboldal tárhelyszolgáltatója a Netlify, Inc. (székhely: 2325 3rd Street, Suite 215, San Francisco, CA 94107, USA). A Weboldalhoz kapcsolódó technikai infrastruktúrát a Netlify biztosítja, amelynek következtében a látogatók egyes adatai, például IP-címük és böngészőjük technikai adatai a Netlify szerverein kerülhetnek feldolgozásra.</p>
+			<p><a href="https://www.netlify.com/privacy/" target="_blank">Netlify adatvédelmi irányelvek</a></p>
+			<h3>7. Kapcsolat</h3>
+			<p>Ha bármilyen kérdése van az adatvédelemmel kapcsolatban, az alábbi e-mail címen elérhet minket:</p>
+			<p>✉ <a href="mailto:SAJATEMAIL@example.com">SAJATEMAIL@example.com</a>`
+		);
+	} else {
+		showModal(
+			'Privacy Policy',
+			`
+			<h3>1. Introduction</h3>
+			<p>This Privacy Policy explains what data we collect and how we handle it on our website (the "Website").</p>
+			<h3>2. What Data Do We Collect?</h3>
+			<p>The Website does not collect or store any personal data from visitors. It operates solely for informational purposes and does not use registration systems or user accounts.</p>
+			<h3>3. Use of Google Fonts</h3>
+			<p>The Website loads fonts from Google Fonts. Google Fonts fetches the fonts directly from Google's servers, which may result in the transmission of the visitor's IP address to Google.</p>
+			<p><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
+			<h3>4. Cookies</h3>
+			<p>The Website does not use cookies.</p>
+			<h3>5. External Links</h3>
+			<p>The Website may contain links to external websites. These websites have their own privacy policies, so we recommend that you read their privacy notices.</p>
+			<h3>6. Web Hosting Provider</h3>
+			<p>The Website's hosting provider is Netlify, Inc. (headquartered at 2325 3rd Street, Suite 215, San Francisco, CA 94107, USA). The technical infrastructure for the Website is provided by Netlify, and as a result, some visitor data, such as IP address and browser technical information, may be processed on Netlify's servers.</p>
+			<p><a href="https://www.netlify.com/privacy/" target="_blank">Netlify Privacy Policy</a></p>
+			<h3>7. Contact</h3>
+			<p>If you have any questions regarding privacy, you can reach us at the following email address:</p>
+			<p>✉ <a href="mailto:SAJATEMAIL@example.com">SAJATEMAIL@example.com</a>`
+		);
+	}
 });
-
 // Terms link
 document.getElementById('termsLink').addEventListener('click', function () {
 	showModal(
