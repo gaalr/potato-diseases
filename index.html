@@ -135,7 +135,16 @@
 				<h2>Egyéb kártevők által okozott károk</h2>
 			</section>
 		</main>
-		<!-- FOOTER WITH MODAL-->
+		<!-- MODAL-->
+		<div id="modal" class="modal hidden">
+			<div class="modal-content">
+				<button class="close-modal">&times;</button>
+				<h2 id="modalTitle"></h2>
+				<p id="modalContent"></p>
+			</div>
+		</div>
+		<div class="overlay hidden"></div>
+		<!-- FOOTER-->
 		<footer class="footer">
 			<div class="footer-content">
 				<p>&copy; 2025 Burgonyagumó betegségek. Minden jog fenntartva.</p>
@@ -148,13 +157,6 @@
 				</nav>
 			</div>
 		</footer>
-		<div id="modal" class="modal hidden">
-			<div class="modal-content">
-				<button class="close-modal">&times;</button>
-				<h2 id="modalTitle"></h2>
-				<p id="modalContent"></p>
-			</div>
-		</div>
 		<script src="script.js"></script>
 	</body>
 </html>

@@ -85,17 +85,37 @@ const modal = document.getElementById('modal');
 const closeModal = document.querySelector('.close-modal');
 const modalTitle = document.getElementById('modalTitle');
 const modalContent = document.getElementById('modalContent');
+const overlay = document.querySelector('.overlay');
 
 // Showing the modal
-function showModal(title, content) {
+const showModal = function (title, content) {
 	modalTitle.textContent = title;
 	modalContent.innerHTML = content;
 	modal.classList.remove('hidden');
-}
+	overlay.classList.remove('hidden');
+};
 // Closing the modal
 closeModal.addEventListener('click', function () {
 	modal.classList.add('hidden');
+	overlay.classList.add('hidden');
 });
+
+// Esc billentyű megnyomása esetén bezárás
+
+document.addEventListener('keydown', function (event) {
+	// console.log(e.key);
+
+	if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+		modal.classList.add('hidden');
+		overlay.classList.add('hidden');
+	}
+});
+// Ha a modal tartalmára kattintunk, ne terjedjen tovább az esemény
+document
+	.querySelector('.modal-content')
+	.addEventListener('click', function (event) {
+		event.stopPropagation();
+	});
 
 // Contact link
 document.getElementById('contactLink').addEventListener('click', function () {
@@ -164,27 +184,6 @@ document.getElementById('termsLink').addEventListener('click', function () {
         `
 	);
 });
-
-// Esc billentyű megnyomása esetén bezárás
-document.addEventListener('keydown', function (event) {
-	if (event.key === 'Escape') {
-		modal.classList.add('hidden');
-	}
-});
-
-// Modalon kívüli kattintás esetén bezárás
-window.addEventListener('click', function (event) {
-	if (event.target === modal) {
-		modal.classList.add('hidden');
-	}
-});
-
-// Ha a modal tartalmára kattintunk, ne terjedjen tovább az esemény
-document
-	.querySelector('.modal-content')
-	.addEventListener('click', function (event) {
-		event.stopPropagation();
-	});
 
 // Showing footer (only in responsive mode)
 const footer = document.querySelector('.footer');
