@@ -93,45 +93,41 @@ diseaseSections.forEach((section) => {
 
 /* MODAL */
 const modal = document.getElementById('modal');
-const closeModal = document.querySelector('.close-modal');
 const modalTitle = document.getElementById('modalTitle');
 const modalContent = document.getElementById('modalContent');
 const overlay = document.querySelector('.overlay');
+const closeModal = document.querySelector('.close-modal');
+const modalContentContainer = document.querySelector('.modal-content');
+
+// Closing the modal
+const closeModalFunction = () => {
+	modal.classList.add('hidden');
+	overlay.classList.add('hidden');
+};
 
 // Showing the modal
-const showModal = function (title, content) {
+const showModal = (title, content) => {
 	modalTitle.textContent = title;
 	modalContent.innerHTML = content;
 	modal.classList.remove('hidden');
 	overlay.classList.remove('hidden');
 };
 
-// Closing the modal when the close button is clicked
-closeModal.addEventListener('click', function () {
-	modal.classList.add('hidden');
-	overlay.classList.add('hidden');
-});
-
-// Closing the modal with the Escape key
-document.addEventListener('keydown', function (event) {
+// Event listeners for closing the modal (Esc key, close button, overlay click)
+document.addEventListener('keydown', (event) => {
 	if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
-		modal.classList.add('hidden');
-		overlay.classList.add('hidden');
+		closeModalFunction();
 	}
 });
 
-// Closing the modal when the overlay is clicked
-overlay.addEventListener('click', function () {
-	modal.classList.add('hidden');
-	overlay.classList.add('hidden');
+[closeModal, overlay].forEach((element) => {
+	element.addEventListener('click', closeModalFunction);
 });
 
-// Preventing the modal from closing when the content is clicked
-document
-	.querySelector('.modal-content')
-	.addEventListener('click', function (event) {
-		event.stopPropagation();
-	});
+// Prevent modal from closing when clicking inside the content area
+modalContentContainer.addEventListener('click', (event) => {
+	event.stopPropagation();
+});
 
 /* LINKS */
 // Contact link
