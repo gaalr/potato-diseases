@@ -1,5 +1,20 @@
 'use strict';
+/* LANGUAGE SWITCHING */
+function changeLanguage(selectElement) {
+	const language = selectElement.value; // hu or en
+	document.documentElement.lang = language; // Az oldal nyelvét is frissítjük
 
+	// Minden elem frissítése
+	const elements = document.querySelectorAll('[data-hu], [data-en]');
+
+	elements.forEach((element) => {
+		if (language === 'en') {
+			element.textContent = element.getAttribute('data-en');
+		} else {
+			element.textContent = element.getAttribute('data-hu');
+		}
+	});
+}
 /* DYNAMIC CONTENT SECTION SWITCHING WITH NAVIGATION LINKS */
 document.addEventListener('DOMContentLoaded', function () {
 	const navLinks = document.querySelectorAll('.nav-link');

@@ -21,49 +21,107 @@
 	<body>
 		<header>
 			<h1>
-				<a href="index.html" class="welcome-text"
+				<a
+					href="index.html"
+					class="welcome-text"
+					data-hu="Üdvözöljük a legfontosabb burgonya gumóbetegségeket bemutató oldalunkon!"
+					data-en="Welcome to the page presenting the most important potato tuber diseases!"
 					>Üdvözöljük a legfontosabb burgonya gumóbetegségeket bemutató
-					oldalunkon!</a
-				>
+					oldalunkon!
+				</a>
 			</h1>
 			<!-- NAVBAR -->
 			<nav class="navbar">
 				<ol class="navbar-list">
 					<li>
-						<a href="/" class="nav-link" data-target="fungal"
-							>Gombás betegségek</a
+						<a
+							href="/"
+							class="nav-link"
+							data-target="fungal"
+							data-hu="Gombás betegségek"
+							data-en="Fungal diseases"
 						>
+							Gombás betegségek
+						</a>
 					</li>
 					<li>
-						<a href="#" class="nav-link" data-target="bacterial"
-							>Baktériumos betegségek</a
+						<a
+							href="#"
+							class="nav-link"
+							data-target="bacterial"
+							data-hu="Baktériumos betegségek"
+							data-en="Bacterial diseases"
 						>
+							Baktériumos betegségek
+						</a>
 					</li>
 					<li>
-						<a href="#" class="nav-link" data-target="viral"
-							>Vírusos betegségek</a
+						<a
+							href="#"
+							class="nav-link"
+							data-target="viral"
+							data-hu="Vírusos betegségek"
+							data-en="Viral diseases"
 						>
+							Vírusos betegségek
+						</a>
 					</li>
 					<li>
-						<a href="#" class="nav-link" data-target="nematode"
-							>Nematódák által okozott betegségek</a
+						<a
+							href="#"
+							class="nav-link"
+							data-target="nematode"
+							data-hu="Nematódák által okozott betegségek"
+							data-en="Diseases caused by nematodes"
 						>
+							Nematódák által okozott betegségek
+						</a>
 					</li>
 					<li>
-						<a href="#" class="nav-link" data-target="physiological"
-							>Élettani rendellenességek</a
+						<a
+							href="#"
+							class="nav-link"
+							data-target="physiological"
+							data-hu="Élettani rendellenességek"
+							data-en="Physiological disorders"
 						>
+							Élettani rendellenességek
+						</a>
 					</li>
 					<li>
-						<a href="#" class="nav-link" data-target="other"
-							>Egyéb kártevők által okozott károk</a
+						<a
+							href="#"
+							class="nav-link"
+							data-target="other"
+							data-hu="Egyéb kártevők által okozott károk"
+							data-en="Other damages caused by pests"
 						>
+							Egyéb kártevők által okozott károk
+						</a>
 					</li>
 				</ol>
 			</nav>
+			<!-- NYELV VÁLASZTÓ -->
+			<div class="language-selector">
+				<label
+					for="language"
+					data-hu="Válasszon nyelvet:"
+					data-en="Choose your language:"
+					>Válasszon nyelvet/Choose your language:</label
+				>
+				<select id="language" onchange="changeLanguage(this)">
+					<option value="hu">Magyar</option>
+					<option value="en">English</option>
+				</select>
+			</div>
 			<!-- HERO -->
 			<div class="main-content">
-				<h1>Kérem válasszon a betegség kategóriák közül!</h1>
+				<h1
+					data-hu="Kérem válasszon a betegség kategóriák közül!"
+					data-en="Please choose a disease category!"
+				>
+					Kérem válasszon a betegség kategóriák közül!
+				</h1>
 			</div>
 		</header>
 		<!-- MAIN PART -->
@@ -147,12 +205,37 @@
 		<!-- FOOTER-->
 		<footer class="footer">
 			<div class="footer-content">
-				<p>&copy; 2025 Burgonyagumó betegségek. Minden jog fenntartva.</p>
+				<p
+					data-hu="&copy; 2025 Burgonyagumó betegségek. Minden jog fenntartva."
+					data-en="&copy; 2025 Potato tuber diseases. All rights reserved."
+				>
+					&copy; 2025 Burgonyagumó betegségek. Minden jog fenntartva.
+				</p>
 				<nav>
 					<ul>
-						<li><a href="#" id="contactLink">Kapcsolat</a></li>
-						<li><a href="#" id="privacyLink">Adatvédelmi irányelvek</a></li>
-						<li><a href="#" id="termsLink">Felhasználási feltételek</a></li>
+						<li>
+							<a href="#" id="contactLink" data-hu="Kapcsolat" data-en="Contact"
+								>Kapcsolat</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								id="privacyLink"
+								data-hu="Adatvédelmi irányelvek"
+								data-en="Privacy Policy"
+								>Adatvédelmi irányelvek</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								id="termsLink"
+								data-hu="Felhasználási feltételek"
+								data-en="Terms of Service"
+								>Felhasználási feltételek</a
+							>
+						</li>
 					</ul>
 				</nav>
 			</div>
