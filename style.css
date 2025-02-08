@@ -5,7 +5,8 @@
 }
 
 body {
-	font-family: 'Orbitron', sans-serif;
+	font-family: 'Lora', serif;
+	font-optical-sizing: auto;
 	min-height: 100vh;
 	max-width: 2000px;
 	margin: 0 auto;
@@ -210,7 +211,6 @@ figcaption {
 	align-items: center;
 	text-align: center;
 	min-height: 50vh; /* A teljes magasságot kitölti */
-	font-family: 'Orbitron', sans-serif;
 }
 
 .main-content h1 {
@@ -351,7 +351,7 @@ figcaption {
 	}
 }
 /* Bigger tablets - below 944px (59em) */
-@media (max-width: 59em) {
+/* @media (max-width: 59em) {
 	body {
 		min-height: 150dvh;
 	}
@@ -389,4 +389,4 @@ figcaption {
 	.footer.show {
 		transform: translateY(0); /* Megjelenik, ha az oldal alján vagyunk */
 	}
-}
+} */
