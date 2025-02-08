@@ -1,28 +1,23 @@
 'use strict';
 
+/* DYNAMIC CONTENT SECTION SWITCHING WITH NAVIGATION LINKS */
 document.addEventListener('DOMContentLoaded', function () {
-	// Kattintásra történő szekcióváltás
 	const navLinks = document.querySelectorAll('.nav-link');
-	const mainContent = document.querySelector('.main-content'); // A középső tartalom
+	const mainContent = document.querySelector('.main-content');
 	navLinks.forEach((link) => {
 		link.addEventListener('click', function (event) {
-			event.preventDefault(); // Megakadályozza az oldal újratöltését
-
-			// Az adat-attribútum kinyerése
+			event.preventDefault(); // Prevent default link behavior
 			const targetClass = this.getAttribute('data-target');
 			const targetElement = document.querySelector(`.disease.${targetClass}`);
-
-			// Először elrejtjük az összes betegséget
+			// Hide all sections
 			document.querySelectorAll('.disease').forEach((disease) => {
 				disease.classList.remove('active');
 			});
-
-			// Megjelenítjük a kiválasztott szekciót
+			// Showing the target section
 			if (targetElement) {
 				targetElement.classList.add('active');
 			}
-
-			// A fő üdvözlő tartalom eltüntetése
+			// Hide main content
 			if (mainContent) {
 				mainContent.style.display = 'none';
 			}
@@ -30,35 +25,35 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-// Képváltás funkció minden szekcióra
+/* IMAGE CAROUSEL */
 const diseaseSections = document.querySelectorAll('.disease');
 diseaseSections.forEach((section) => {
 	const images = section.querySelectorAll('.image-item');
 	let currentImageIndex = 0;
 
-	// Ha van kép, az első képet megjelenítjük
+	// Showing the first image if there is any
 	if (images.length > 0) {
 		images[currentImageIndex].classList.add('active');
 	}
 
-	// Képváltás
+	// Image switching function
 	function showImage(index) {
-		// Elrejtjük az összes képet
+		// Hide all images
 		images.forEach((img, i) => {
 			img.classList.remove('active');
 		});
 
-		// Az aktuális képet megjelenítjük
+		// Show the selected image
 		images[index].classList.add('active');
 
-		// Frissítjük a gombok állapotát
+		// Button disabling
 		const prevButton = section.querySelector('.prev');
 		const nextButton = section.querySelector('.next');
 		prevButton.disabled = index === 0;
 		nextButton.disabled = index === images.length - 1;
 	}
 
-	// Gombok eseménykezelői
+	// Button event listeners
 	const prevButton = section.querySelector('.prev');
 	const nextButton = section.querySelector('.next');
 
@@ -80,7 +75,6 @@ diseaseSections.forEach((section) => {
 });
 
 /* MODAL */
-
 const modal = document.getElementById('modal');
 const closeModal = document.querySelector('.close-modal');
 const modalTitle = document.getElementById('modalTitle');
@@ -94,23 +88,28 @@ const showModal = function (title, content) {
 	modal.classList.remove('hidden');
 	overlay.classList.remove('hidden');
 };
-// Closing the modal
+
+// Closing the modal when the close button is clicked
 closeModal.addEventListener('click', function () {
 	modal.classList.add('hidden');
 	overlay.classList.add('hidden');
 });
 
-// Esc billentyű megnyomása esetén bezárás
-
+// Closing the modal with the Escape key
 document.addEventListener('keydown', function (event) {
-	// console.log(e.key);
-
 	if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
 		modal.classList.add('hidden');
 		overlay.classList.add('hidden');
 	}
 });
-// Ha a modal tartalmára kattintunk, ne terjedjen tovább az esemény
+
+// Closing the modal when the overlay is clicked
+overlay.addEventListener('click', function () {
+	modal.classList.add('hidden');
+	overlay.classList.add('hidden');
+});
+
+// Preventing the modal from closing when the content is clicked
 document
 	.querySelector('.modal-content')
 	.addEventListener('click', function (event) {
