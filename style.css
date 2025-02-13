@@ -166,14 +166,15 @@ figcaption {
 
 /* FOOTER */
 .footer {
+	display: flex;
+
 	background-color: #333;
 	color: white;
 	padding: 0.5rem 0;
 	text-align: center;
 	position: fixed;
 	bottom: 0;
-	width: 100%;
-	left: 0;
+	margin: 0 auto;
 }
 
 .footer .footer-content {
@@ -190,7 +191,7 @@ figcaption {
 .footer nav ul {
 	list-style-type: none;
 	padding: 0;
-	margin: 0;
+	margin: 0 auto;
 	display: flex;
 	gap: 1rem;
 }
