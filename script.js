@@ -93,6 +93,7 @@ diseaseSections.forEach((section) => {
 
 /* MODAL */
 const modal = document.getElementById('modal');
+const footer = document.querySelector('.footer');
 const modalTitle = document.getElementById('modalTitle');
 const modalContent = document.getElementById('modalContent');
 const overlay = document.querySelector('.overlay');
@@ -103,6 +104,7 @@ const modalContentContainer = document.querySelector('.modal-content');
 const closeModalFunction = () => {
 	modal.classList.add('hidden');
 	overlay.classList.add('hidden');
+	footer.classList.add('show');
 };
 
 // Showing the modal
@@ -248,7 +250,7 @@ document.getElementById('termsLink').addEventListener('click', function () {
 });
 
 /* FOOTER */
-const footer = document.querySelector('.footer');
+const footerShow = document.querySelector('.footer');
 
 window.addEventListener('scroll', () => {
 	if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
