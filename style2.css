@@ -1,3 +1,9 @@
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 :root {
 	--primary-color: #333;
 	--secondary-color: chocolate;
@@ -12,7 +18,7 @@
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	min-height: 120vh;
 	background-color: var(--background-color);
 	color: var(--primary-color);
 	font-family: 'Lora', serif;
