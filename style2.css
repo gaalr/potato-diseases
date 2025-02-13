@@ -180,30 +180,29 @@ figcaption {
 
 /* FOOTER */
 .footer {
-	display: none;
-	opacity: 0; /* Kezdetben rejtett */
+	visibility: hidden; /* Kezdetben rejtett */
+	opacity: 0; /* Kezdetben átlátszó */
 	transform: translateY(100%); /* Kezdetben az aljáról jön */
 	transition: opacity 0.5s ease, transform 0.5s ease; /* Finom animáció */
-}
-.footer.show {
-	display: flex;
-	opacity: 1; /* Amikor látható, teljesen átlátszó */
-	transform: translateY(0); /* Vissza a helyére */
-	transition: opacity 0.5s ease, transform 0.5s ease;
-	justify-content: center;
-	align-items: center;
 	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%) translateY(100%); /* Középre helyezi, majd az aljáról hozza fel */
 	background-color: var(--primary-color);
 	color: var(--white);
 	padding: 10px 20px;
-	/* width: 100%; */
-	/* max-width: 1600px; */
-
-	bottom: 0;
-	/* left: 50%; */
 	border-radius: 10px 10px 0 0;
-	/* transform: translateX(-50%); */
-	/* margin: 0 auto; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Ha a footer láthatóvá válik */
+.footer.show {
+	visibility: visible; /* Láthatóvá válik */
+	opacity: 1; /* Teljesen látható */
+	transform: translateX(-50%) translateY(0); /* Az aljáról feljön és középre kerül */
+	transition: opacity 0.5s ease, transform 0.5s ease; /* Finom animáció */
 }
 /* Finom animáció */
 @keyframes slideUp {
@@ -217,9 +216,6 @@ figcaption {
 	}
 }
 
-.footer.show {
-	animation: slideUp 0.5s ease-out forwards; /* Finom animációval jelenik meg */
-}
 .footer p {
 	margin-bottom: 0.3rem;
 	font-size: 1rem;
@@ -230,6 +226,7 @@ figcaption {
 	padding: 0;
 	margin: 0;
 	display: flex;
+	justify-content: center;
 	gap: 1rem;
 }
 
