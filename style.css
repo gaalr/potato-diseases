@@ -16,22 +16,24 @@
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	min-height: 120vh;
+	height: 130vh;
 	background-color: var(--background-color);
 	color: var(--primary-color);
 	font-family: 'Lora', serif;
-	font-optical-sizing: auto;
-	margin: 0 auto;
-	padding: 1rem;
-	max-width: 1600px;
-	padding-bottom: 50px;
+	/* padding: 1rem; */
 }
-
+.content {
+	/* border: 2px solid black; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header {
+	padding: 10px 20px;
+}
 /* LANGUAGE SELECTOR */
 .language-selector {
-	margin-top: 20px;
+	margin: 20px;
 	font-size: 16px;
 }
 
@@ -62,14 +64,18 @@ h2 {
 	color: var(--primary-color);
 	margin-bottom: 1rem;
 }
-
+.navbar,
+.footer {
+	max-width: 1400px;
+	width: 100%;
+}
 /* NAVBAR */
 .navbar {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: var(--primary-color);
-	padding: 10px 20px;
+	padding: 10px;
 	margin-bottom: 1rem;
 	letter-spacing: 2px;
 	border-radius: 10px;
@@ -95,6 +101,43 @@ h2 {
 }
 
 .navbar-list a:hover {
+	color: var(--secondary-color);
+}
+
+/* FOOTER */
+.footer {
+	position: fixed;
+	background-color: var(--primary-color);
+	color: var(--white);
+	bottom: 0;
+
+	padding: 10px 10px;
+	border-radius: 10px 10px 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer p {
+	margin-bottom: 0.3rem;
+	font-size: 1rem;
+}
+
+.footer-nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.footer nav a {
+	text-decoration: none;
+	color: var(--white);
+}
+
+.footer nav a:hover {
 	color: var(--secondary-color);
 }
 
@@ -182,67 +225,6 @@ figcaption {
 .pagination button:disabled {
 	background-color: var(--gray);
 	cursor: not-allowed;
-}
-
-/* FOOTER */
-.footer {
-	visibility: hidden; /* Kezdetben rejtett */
-	opacity: 0; /* Kezdetben átlátszó */
-	transform: translateY(100%); /* Kezdetben az aljáról jön */
-	transition: opacity 0.5s ease, transform 0.5s ease; /* Finom animáció */
-	position: fixed;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%) translateY(100%); /* Középre helyezi, majd az aljáról hozza fel */
-	background-color: var(--primary-color);
-	color: var(--white);
-	padding: 10px 20px;
-	border-radius: 10px 10px 0 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-/* Ha a footer láthatóvá válik */
-.footer.show {
-	visibility: visible; /* Láthatóvá válik */
-	opacity: 1; /* Teljesen látható */
-	transform: translateX(-50%) translateY(0); /* Az aljáról feljön és középre kerül */
-	transition: opacity 0.5s ease, transform 0.5s ease; /* Finom animáció */
-}
-/* Finom animáció */
-@keyframes slideUp {
-	0% {
-		opacity: 0;
-		transform: translateY(100%);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.footer p {
-	margin-bottom: 0.3rem;
-	font-size: 1rem;
-}
-
-.footer nav ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	justify-content: center;
-	gap: 1rem;
-}
-
-.footer nav a {
-	text-decoration: none;
-	color: var(--white);
-}
-
-.footer nav a:hover {
-	color: var(--secondary-color);
 }
 
 /* HERO */
@@ -348,8 +330,5 @@ figcaption {
 
 	.navbar-list li {
 		margin-bottom: 1rem;
-	}
-	.footer {
-		padding: 8px 16px;
 	}
 }

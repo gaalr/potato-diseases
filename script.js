@@ -250,14 +250,14 @@ document.getElementById('termsLink').addEventListener('click', function () {
 });
 
 /* FOOTER */
-const footerShow = document.querySelector('.footer');
+// const footerShow = document.querySelector('.footer');
 
-window.addEventListener('scroll', () => {
-	if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-		// Show the footer if we are at the bottom
-		footer.classList.add('show');
-	} else {
-		// Hide the footer if we are not at the bottom
-		footer.classList.remove('show');
-	}
-});
+// window.addEventListener('scroll', () => {
+// 	if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+// 		// Show the footer if we are at the bottom
+// 		footer.classList.add('show');
+// 	} else {
+// 		// Hide the footer if we are not at the bottom
+// 		footer.classList.remove('show');
+// 	}
+// });
